@@ -1,0 +1,1389 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UnderTale: Гайды | Враги</title>
+
+    <!-- СКРИПТ СВЕТЛОЙ ТЕМЫ -->
+    <script>
+        (function() {
+            try {
+                const savedTheme = localStorage.getItem('site-theme');
+                if (savedTheme === 'light') {
+                    // Добавляем класс к html
+                    document.documentElement.classList.add('light-theme');
+                    
+                    // Как только body загрузится, добавим класс и ему
+                    if (document.body) {
+                        document.body.classList.add('light-theme');
+                    } else {
+                        // Ждем загрузки DOM
+                        document.addEventListener('DOMContentLoaded', function() {
+                            document.body.classList.add('light-theme');
+                        });
+                    }
+                    
+                    // Временные стили чтобы не мигало
+                    const style = document.createElement('style');
+                    style.textContent = `
+                        .light-theme {
+                            background-color: #fdf1ff;
+                            color: #222222;
+                        }
+                        .light-theme .wide-container {
+                            background-color: #ffffff;
+                            border-left: 2px solid #864991;
+                            border-right: 2px solid #864991;
+                        }
+                    `;
+                    document.head.appendChild(style);
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <link rel="stylesheet" href="враги-css.css">
+    <link rel="stylesheet" href="светлая-тема.css">
+
+
+
+
+</head>
+<body>
+    <!-- РАДИО-КНОПКИ ДЛЯ ФИЛЬТРОВ -->
+    <input type="radio" name="location-filter" id="filter-all" class="filter-radio" checked>
+    <input type="radio" name="location-filter" id="filter-ruins" class="filter-radio">
+    <input type="radio" name="location-filter" id="filter-snowdin" class="filter-radio">
+    <input type="radio" name="location-filter" id="filter-waterfall" class="filter-radio">
+    <input type="radio" name="location-filter" id="filter-hotland" class="filter-radio">
+    <input type="radio" name="location-filter" id="filter-core" class="filter-radio">
+
+    <div class="wide-container">
+        <!-- ШАПКА -->
+        <div class="header">
+            <h1>UNDERTALE</h1>
+            <p>Энциклопедия Подземелья</p>
+        </div>
+
+        <!-- НАВИГАЦИЯ -->
+        <div class="nav-menu">
+            <a href="index.html" class="nav-btn">❤️ ГЛАВНАЯ</a>
+            <a href="enemies.html" class="nav-btn active">⚔️ ВРАГИ</a>
+            <a href="items.html" class="nav-btn">🎒 ПРЕДМЕТЫ</a>
+            <a href="articles.html" class="nav-btn">📚 СТАТЬИ</a>
+        </div>
+
+        <!-- ОСНОВНОЙ КОНТЕНТ -->
+        <div class="content">
+            <h2 class="page-title">⚔️ ВРАГИ ПОДЗЕМЕЛЬЯ</h2>
+            <p class="page-description">Полный список: от Руин до Короля</p>
+
+            <!-- ФИЛЬТРЫ ПО ЛОКАЦИЯМ (ТЕПЕРЬ LABEL) -->
+            <div class="filters">
+                <label for="filter-all" class="filter-btn active-filter">ВСЕ</label>
+                <label for="filter-ruins" class="filter-btn">РУИНЫ</label>
+                <label for="filter-snowdin" class="filter-btn">СНОУДИН</label>
+                <label for="filter-waterfall" class="filter-btn">ВОДОПАД</label>
+                <label for="filter-hotland" class="filter-btn">ХОТЛЕНД</label>
+                <label for="filter-core" class="filter-btn">КОР</label>
+            </div>
+
+            <!-- СЕТКА С ВРАГАМИ -->
+            <div class="enemies-grid">
+                 <div class="enemy-card" data-location="РУИНЫ">
+    <div class="enemy-image" style="background-image: url('images/ториэль спрайт.png');"></div>
+    <h3>ТОРИЭЛЬ</h3>
+    <div class="enemy-location">📍 РУИНЫ</div>
+    <div class="enemy-stats">
+        <span>❤️ 440 HP</span>
+        <span>⚔️ 80 ATK</span>
+        <span>🛡️ 80 DEF</span>
+    </div>
+    <p class="enemy-description">Является первым боссом в игре, в бою с которым почти невозможно умереть.
+    </p>
+    <div class="enemy-action">⚡ Действие: Пощада</div>
+</div> 
+
+                <!-- Напстаблук -->
+                <div class="enemy-card" data-location="РУИНЫ">
+                    <div class="enemy-image" style="background-image: url('images/блук спрайт.png');"></div>
+                    <h3>НАПСТАБЛУК</h3>
+                    <div class="enemy-location">📍 РУИНЫ</div>
+                    <div class="enemy-stats">
+                        <span>❤️ 5 HP</span>
+                        <span>⚔️ 5 ATK</span>
+                        <span>🛡️ 5 DEF</span>
+                    </div>
+                    <p class="enemy-description">
+                        Призрак, который не хочет драться. Если пощадить — просто уйдет.
+                    </p>
+                    <div class="enemy-action">⚡ Действие: Приободрить</div>
+                </div>
+
+                <!-- Вегетоид -->
+                <div class="enemy-card" data-location="РУИНЫ">
+                    <div class="enemy-image" style="background-image: url('images/вегетоид спрайт.png');"></div>
+                    <h3>ВЕГЕТОИД</h3>
+                    <div class="enemy-location">📍 РУИНЫ</div>
+                    <div class="enemy-stats">
+                        <span>❤️ 72 HP</span>
+                        <span>⚔️ 6 ATK</span>
+                        <span>🛡️ 6 DEF</span>
+                    </div>
+                    <p class="enemy-description">
+                        Буквально живая морковка, которая ОЧЕНЬ хочет тебя накормить.
+                    </p>
+                    <div class="enemy-action">⚡ Действие: Поужинать</div>
+                </div>
+
+                <!-- МИНИЖЕЛЛ -->
+                <div class="enemy-card" data-location="РУИНЫ, ВОДОПАД">
+                    <div class="enemy-image" style="background-image: url('images/минижел спрайт.png');"></div>
+                    <h3>МИНИЖЕЛЛ</h3>
+                    <div class="enemy-location">📍 РУИНЫ, ВОДОПАД</div>
+                    <div class="enemy-stats">
+                        <span>❤️ 50 HP</span>
+                        <span>⚔️ 4-7 ATK</span>
+                        <span>🛡️ 0 DEF</span>
+                    </div>
+                    <p class="enemy-description">Кокетливое, но безмозглое желе...</p>
+                    <div class="enemy-action">⚡ Действие: Сексуальное покачивание бедрами</div>
+                </div>
+
+                <!-- МАНЕКЕН -->
+                <div class="enemy-card" data-location="РУИНЫ">
+                    <div class="enemy-image" style="background-image: url('images/манекен спрайт.png');"></div>
+                    <h3>МАНЕКЕН</h3>
+                    <div class="enemy-location">📍 РУИНЫ</div>
+                    <div class="enemy-stats">
+                        <span>❤️ 15 HP</span>
+                        <span>⚔️ 0 ATK</span>
+                        <span>🛡️ 0 [-5] DEF</span>
+                    </div>
+                    <p class="enemy-description">Сердце из хлопка и глаз-кнопка. Ты — зеница моего ока.</p>
+                    <div class="enemy-action">⚡ Действие: Поговорить</div>
+                </div>
+
+                <!-- ВИМСАН -->
+                <div class="enemy-card" data-location="РУИНЫ">
+                    <div class="enemy-image" style="background-image: url('images/вимсан спрайт.png');"></div>
+                    <h3>ВИМСАН</h3>
+                    <div class="enemy-location">📍 РУИНЫ</div>
+                    <div class="enemy-stats">
+                        <span>❤️ 10 HP</span>
+                        <span>⚔️ 4 ATK</span>
+                        <span>🛡️ 0 DEF</span>
+                    </div>
+                    <p class="enemy-description">Этот монстр слишком чувствителен для битвы...</p>
+                    <div class="enemy-action">⚡ Действие: Утешить</div>
+                </div>
+           
+ 
+                  <!-- МИГОСП -->
+                <div class="enemy-card" data-location="РУИНЫ">
+                    <div class="enemy-image" style="background-image: url('images/мигосп спрайт.png');"></div>
+                    <h3>МИГОСП</h3>
+                    <div class="enemy-location">📍 РУИНЫ</div>
+                    <div class="enemy-stats">
+                        <span>❤️ 40 HP</span>
+                        <span>⚔️ 7 ATK</span>
+                        <span>🛡️ 5 DEF</span>
+                    </div>
+                    <p class="enemy-description">Он выглядит злым, но он просто не с той толпой... Наслаждается временем, проводимым в одиночестве.</p>
+                    <div class="enemy-action">⚡ Действие: поговорить, когда он останется один.</div>
+                </div>
+
+                     <!-- ЛУКС -->
+                 <div class="enemy-card" data-location="РУИНЫ">
+    <div class="enemy-image" style="background-image: url('images/лукс спрайт.png');"></div>
+    <h3>ЛУКС</h3>
+    <div class="enemy-location">📍 РУИНЫ</div>
+    <div class="enemy-stats">
+        <span>❤️ 50 HP</span>
+        <span>⚔️ 6 ATK</span>
+        <span>🛡️ 6 DEF</span>
+    </div>
+    <p class="enemy-description">Не дразните его. Фамилия: Айуокер.
+    </p>
+    <div class="enemy-action">⚡ Действие: Не дразнить</div>
+</div>
+
+                
+                <!-- Фроггит -->
+                <div class="enemy-card" data-location="РУИНЫ">
+                    <div class="enemy-image" style="background-image: url('images/фроггит спрайт.png');"></div>
+                    <h3>ФРОГГИТ</h3>
+                    <div class="enemy-location">📍 РУИНЫ</div>
+                    <div class="enemy-stats">
+                        <span>❤️ 30 HP</span>
+                        <span>⚔️ 5 ATK</span>
+                        <span>🛡️ 4 DEF</span>
+                    </div>
+                    <p class="enemy-description">
+                        Маленький лягушкоподобный монстр. Если с ним подружиться, может пропустить ход.
+                    </p>
+                    <div class="enemy-action">⚡ Действие: Поговорить</div>
+                </div> 
+
+      <div class="enemy-card" data-location="СНОУДИН">
+    <div class="enemy-image" style="background-image: url('images/ледошляп спрайт.png');"></div>
+    <h3>ЛЕДОШЛЯП</h3>
+    <div class="enemy-location">📍 СНОУДИН</div>
+    <div class="enemy-stats">
+        <span>❤️ 48 HP</span>
+        <span>⚔️ 11 ATK</span>
+        <span>🛡️ 4 DEF</span>
+    </div>
+    <p class="enemy-description">Этот подросток интересуется, почему его зовут не 'айс-хэт'.
+    </p>
+    <div class="enemy-action">⚡ Действие: Игнорировать</div>
+</div>
+
+                 <div class="enemy-card" data-location="СНОУДИН">
+    <div class="enemy-image" style="background-image: url('images/папи спрайт.png');"></div>
+    <h3>ПАПАЙРУС</h3>
+    <div class="enemy-location">📍 СНОУДИН</div>
+    <div class="enemy-stats">
+        <span>❤️ 680 HP</span>
+        <span>⚔️ 8 ATK</span>
+        <span>🛡️ 20 DEF</span>
+    </div>
+    <p class="enemy-description">Он любит говорить: "Нье-хе-хе!"
+    </p>
+    <div class="enemy-action">⚡ Действие: Пощада</div>
+</div>
+
+                 <div class="enemy-card" data-location="СНОУДИН">
+    <div class="enemy-image" style="background-image: url('images/санси спрайт.png');"></div>
+    <h3>САНС</h3>
+    <div class="enemy-location">📍 СНОУДИН</div>
+    <div class="enemy-stats">
+        <span>❤️ 1 HP</span>
+        <span>⚔️ 1 ATK</span>
+        <span>🛡️ 1 DEF</span>
+    </div>
+    <p class="enemy-description">Очень обаятельный скелет, которому до лучевой кости твои проблемы
+    </p>
+    <div class="enemy-action">⚡ Действие: Будь дружелюбным бро</div>
+</div>
+
+                 <div class="enemy-card" data-location="ВОДОПАД">
+    <div class="enemy-image" style="background-image: url('images/темми спрайт.png');"></div>
+    <h3>ТЕММИ!11!!!</h3>
+    <div class="enemy-location">📍 ВОДОПАД</div>
+    <div class="enemy-stats">
+        <span>❤️ 5 HP</span>
+        <span>⚔️ 7 ATK</span>
+        <span>🛡️ -20 DEF</span>
+    </div>
+    <p class="enemy-description">Любит гладить милых людей. Но у тебя аллергия!
+    </p>
+    <div class="enemy-action">⚡ Действие: Пощада</div>
+</div>
+
+                 <div class="enemy-card" data-location="ХОТЛЕНД">
+    <div class="enemy-image" style="background-image: url('images/цун спрайт.png');"></div>
+    <h3>ЦУНДЕРЕПЛАН</h3>
+    <div class="enemy-location">📍 ХОТЛЕНД</div>
+    <div class="enemy-stats">
+        <span>❤️ 80 HP</span>
+        <span>⚔️ 25 ATK</span>
+        <span>🛡️ 26 DEF</span>
+    </div>
+    <p class="enemy-description">Выглядит грубой, но может вы ей втайне нравитесь?
+    </p>
+    <div class="enemy-action">⚡ Действие: Приблизиться</div>
+</div>
+
+                 <div class="enemy-card" data-location="ХОТЛЕНД">
+    <div class="enemy-image" style="background-image: url('images/мета спрайт.png');"></div>
+    <h3>МЕТТАТОН</h3>
+    <div class="enemy-location">📍 ХОТЛЕНД</div>
+    <div class="enemy-stats">
+        <span>❤️ 9999 HP</span>
+        <span>⚔️ 10 ATK</span>
+        <span>🛡️ 999 DEF</span>
+    </div>
+    <p class="enemy-description">Уверенный в себе, харизматичный и очаровательный телеведущий, который любит драму, экшен и насилие
+    </p>
+    <div class="enemy-action">⚡ Действие: Правильно отвечайте на его вопросы</div>
+</div>
+
+                 <div class="enemy-card" data-location="КОР">
+    <div class="enemy-image" style="background-image: url('images/эндоген спрайт.png');"></div>
+    <h3>ЭНДОГЕН</h3>
+    <div class="enemy-location">📍 КОР</div>
+    <div class="enemy-stats">
+        <span>❤️ 100 HP</span>
+        <span>⚔️ 9 ATK</span>
+        <span>🛡️ 999 DEF</span>
+    </div>
+    <p class="enemy-description">Неясно, за сколько собак оно считается.
+    </p>
+    <div class="enemy-action">⚡ Действие: Погладить</div>
+</div>
+
+
+
+                 <div class="enemy-card" data-location="КОР">
+    <div class="enemy-image" style="background-image: url('images/хлеб спрайт.png');"></div>
+    <h3>ЛИМОННЫЙ ХЛЕБ</h3>
+    <div class="enemy-location">📍 КОР</div>
+    <div class="enemy-stats">
+        <span>❤️ 100 HP</span>
+        <span>⚔️ 8 ATK</span>
+        <span>🛡️ 9999 DEF</span>
+    </div>
+    <p class="enemy-description">Добро пожаловать в мой особый ад.
+    </p>
+    <div class="enemy-action">⚡ Действие: Пахнет сладкими лимонами</div>
+</div>
+
+
+<!-- ЛЕДОШЛЯП (Ice Cap) -->
+<div class="enemy-card" data-location="СНОУДИН">
+    <div class="enemy-image" style="background-image: url('images/ледошляп спрайт.png');"></div>
+    <h3>ЛЕДОШЛЯП</h3>
+    <div class="enemy-location">📍 СНОУДИН</div>
+    <div class="enemy-stats">
+        <span>❤️ 48 HP</span>
+        <span>⚔️ 11 ATK</span>
+        <span>🛡️ 4 DEF</span>
+    </div>
+    <p class="enemy-description">
+        Этот подросток интересуется, почему его зовут не "айс-хэт". Летает по кругу, 
+        оставляя ледяной след. Любит скорость и холод.
+    </p>
+    <div class="enemy-action">⚡ Действие: Игнорировать / Похвалить шапку</div>
+</div>
+
+<!-- СНОУДРЕЙК (Snowdrake) -->
+<div class="enemy-card" data-location="СНОУДИН">
+    <div class="enemy-image" style="background-image: url('images/сноудрейк спрайт.png');"></div>
+    <h3>СНОУДРЕЙК</h3>
+    <div class="enemy-location">📍 СНОУДИН</div>
+    <div class="enemy-stats">
+        <span>❤️ 60 HP</span>
+        <span>⚔️ 9 ATK</span>
+        <span>🛡️ 5 DEF</span>
+    </div>
+    <p class="enemy-description">
+        Маленький дракончик, который любит шутить. Его шутки иногда бывают несмешными, 
+        но он очень старается. Если посмеяться — станет другом.
+    </p>
+    <div class="enemy-action">⚡ Действие: Смеяться / Поддержать</div>
+</div>
+
+<!-- ГРИЛЛБИ (Grillby) - не враг, но можно как специальный персонаж -->
+<div class="enemy-card" data-location="СНОУДИН">
+    <div class="enemy-image" style="background-image: url('images/грилби спрайт.png');"></div>
+    <h3>ГРИЛЛБИ</h3>
+    <div class="enemy-location">📍 СНОУДИН</div>
+    <div class="enemy-stats">
+        <span>❤️ ??? HP</span>
+        <span>⚔️ ??? ATK</span>
+        <span>🛡️ ??? DEF</span>
+    </div>
+    <p class="enemy-description">
+        Таинственный бармен, состоящий из пламени. В баре Гриллби собираются все скелеты 
+        и монстры Сноудина. Редко говорит, но всегда слушает.
+    </p>
+    <div class="enemy-action">⚡ Действие: Заказать напиток</div>
+</div>
+
+<!-- ТЕММИ (Temmie) -->
+<div class="enemy-card" data-location="ВОДОПАД">
+    <div class="enemy-image" style="background-image: url('images/темми спрайт.png');"></div>
+    <h3>ТЕММИ!11!!!</h3>
+    <div class="enemy-location">📍 ВОДОПАД</div>
+    <div class="enemy-stats">
+        <span>❤️ 5 HP</span>
+        <span>⚔️ 7 ATK</span>
+        <span>🛡️ -20 DEF</span>
+    </div>
+    <p class="enemy-description">
+        Любит гладить милых людей. Но у тебя аллергия! Очень редкое и странное существо. 
+        Говорит на своем языке — тему языке.
+    </p>
+    <div class="enemy-action">⚡ Действие: Пощада / Погладить (нельзя)</div>
+</div>
+
+<!-- ААРОН (Aaron) -->
+<div class="enemy-card" data-location="ВОДОПАД">
+    <div class="enemy-image" style="background-image: url('images/аарон спрайт.png');"></div>
+    <h3>ААРОН</h3>
+    <div class="enemy-location">📍 ВОДОПАД</div>
+    <div class="enemy-stats">
+        <span>❤️ 88 HP</span>
+        <span>⚔️ 8 ATK</span>
+        <span>🛡️ 6 DEF</span>
+    </div>
+    <p class="enemy-description">
+        Очень любит свои мышцы. Если им восхищаться, он будет показывать позы вместо атак. 
+        Не любит, когда его игнорируют.
+    </p>
+    <div class="enemy-action">⚡ Действие: Восхищаться / Игнорировать</div>
+</div>
+
+<!-- ШАЙРЕН (Shyren) -->
+<div class="enemy-card" data-location="ВОДОПАД">
+    <div class="enemy-image" style="background-image: url('images/сирена спрайт.png');"></div>
+    <h3>ШАЙРЕН</h3>
+    <div class="enemy-location">📍 ВОДОПАД</div>
+    <div class="enemy-stats">
+        <span>❤️ 60 HP</span>
+        <span>⚔️ 6 ATK</span>
+        <span>🛡️ 4 DEF</span>
+    </div>
+    <p class="enemy-description">
+        Застенчивая русалка. Стесняется петь при других. Если подпевать ей, она обретет 
+        уверенность и станет другом.
+    </p>
+    <div class="enemy-action">⚡ Действие: Подпевать / Подбодрить</div>
+</div>
+
+<!-- ВРАЛ (Woshua) - уже есть в Руинах, но можно добавить еще -->
+<div class="enemy-card" data-location="ВОДОПАД">
+    <div class="enemy-image" style="background-image: url('images/вошуа спрайт.png');"></div>
+    <h3>ВОШУА</h3>
+    <div class="enemy-location">📍 ВОДОПАД</div>
+    <div class="enemy-stats">
+        <span>❤️ 45 HP</span>
+        <span>⚔️ 6 ATK</span>
+        <span>🛡️ 2 DEF</span>
+    </div>
+    <p class="enemy-description">
+        Маленькое чистящее существо. Любит мыться и намыливаться. Если дать ему мыло, 
+        будет очень рад. В Водопаде их особенно много.
+    </p>
+    <div class="enemy-action">⚡ Действие: Дать мыло</div>
+</div>
+
+
+<!-- ЦУНДЕРЕПЛАН (Tsunderplane) -->
+<div class="enemy-card" data-location="ХОТЛЕНД">
+    <div class="enemy-image" style="background-image: url('images/цун спрайт.png');"></div>
+    <h3>ЦУНДЕРЕПЛАН</h3>
+    <div class="enemy-location">📍 ХОТЛЕНД</div>
+    <div class="enemy-stats">
+        <span>❤️ 80 HP</span>
+        <span>⚔️ 25 ATK</span>
+        <span>🛡️ 26 DEF</span>
+    </div>
+    <p class="enemy-description">
+        Выглядит грубой, но может вы ей втайне нравитесь? Атакует ракетами, но если 
+        подойти ближе — смущается и пропускает ход.
+    </p>
+    <div class="enemy-action">⚡ Действие: Приблизиться / Сказать "Бака!"</div>
+</div>
+
+<!-- ВУЛКИН (Vulkin) -->
+<div class="enemy-card" data-location="ХОТЛЕНД">
+    <div class="enemy-image" style="background-image: url('images/вулкин спрайт.png');"></div>
+    <h3>ВУЛКИН</h3>
+    <div class="enemy-location">📍 ХОТЛЕНД</div>
+    <div class="enemy-stats">
+        <span>❤️ 120 HP</span>
+        <span>⚔️ 15 ATK</span>
+        <span>🛡️ 8 DEF</span>
+    </div>
+    <p class="enemy-description">
+        Маленький вулкан, который ищет свою любовь. Очень романтичный и страстный. 
+        Если проявить симпатию — поделится теплом.
+    </p>
+    <div class="enemy-action">⚡ Действие: Флиртовать / Согреться</div>
+</div>
+
+<!-- МЕТТАТОН (Mettaton) - обычная форма -->
+<div class="enemy-card" data-location="ХОТЛЕНД">
+    <div class="enemy-image" style="background-image: url('images/мета спрайт.png');"></div>
+    <h3>МЕТТАТОН</h3>
+    <div class="enemy-location">📍 ХОТЛЕНД</div>
+    <div class="enemy-stats">
+        <span>❤️ 9999 HP</span>
+        <span>⚔️ 10 ATK</span>
+        <span>🛡️ 999 DEF</span>
+    </div>
+    <p class="enemy-description">
+        Уверенный в себе, харизматичный и очаровательный телеведущий, который любит 
+        драму, экшен и насилие. Мечтает стать звездой.
+    </p>
+    <div class="enemy-action">⚡ Действие: Правильно отвечать на его вопросы</div>
+</div>
+
+<!-- СОБАЧКА (Doggo) - можно добавить в Хотленд -->
+<div class="enemy-card" data-location="ХОТЛЕНД">
+    <div class="enemy-image" style="background-image: url('images/собака спрайт.png');"></div>
+    <h3>СОБАЧКА</h3>
+    <div class="enemy-location">📍 ХОТЛЕНД</div>
+    <div class="enemy-stats">
+        <span>❤️ 50 HP</span>
+        <span>⚔️ 5 ATK</span>
+        <span>🛡️ 3 DEF</span>
+    </div>
+    <p class="enemy-description">
+        Маленькая собачка, которая плохо видит. Замечает только движение. Если стоять 
+        смирно — не заметит и пройдет мимо.
+    </p>
+    <div class="enemy-action">⚡ Действие: Замереть / Помахать</div>
+</div>
+
+
+<!-- ЭНДОГЕН (Endogeny) -->
+<div class="enemy-card" data-location="КОР">
+    <div class="enemy-image" style="background-image: url('images/эндоген спрайт.png');"></div>
+    <h3>ЭНДОГЕН</h3>
+    <div class="enemy-location">📍 КОР</div>
+    <div class="enemy-stats">
+        <span>❤️ 100 HP</span>
+        <span>⚔️ 9 ATK</span>
+        <span>🛡️ 999 DEF</span>
+    </div>
+    <p class="enemy-description">
+        Неясно, за сколько собак оно считается. Эндоген — робот-собака, созданный Альфис. 
+        Внутри него бесконечное количество собак. Чем больше гладишь, тем больше их вылезает.
+    </p>
+    <div class="enemy-action">⚡ Действие: Погладить / Перестать гладить</div>
+</div>
+
+<!-- ЛИМОННЫЙ ХЛЕБ (Lemon Bread) -->
+<div class="enemy-card" data-location="КОР">
+    <div class="enemy-image" style="background-image: url('images/хлеб спрайт.png');"></div>
+    <h3>ЛИМОННЫЙ ХЛЕБ</h3>
+    <div class="enemy-location">📍 КОР</div>
+    <div class="enemy-stats">
+        <span>❤️ 100 HP</span>
+        <span>⚔️ 8 ATK</span>
+        <span>🛡️ 9999 DEF</span>
+    </div>
+    <p class="enemy-description">
+        Добро пожаловать в мой особый ад. Лимонный хлеб — один из самых странных врагов в игре.
+        Пахнет сладкими лимонами. Не спрашивай, что это такое. Просто прими как данность.
+    </p>
+    <div class="enemy-action">⚡ Действие: Понюхать / Принять</div>
+</div>
+
+<!-- МАЛЯВКА (Ragdoll) - каноничный враг из ядра -->
+<div class="enemy-card" data-location="КОР">
+    <div class="enemy-image" style="background-color: #000000; display: flex; align-items: center; justify-content: center; color: #ff4444; font-size: 3em;">🧸</div>
+    <h3>МАЛЯВКА</h3>
+    <div class="enemy-location">📍 КОР</div>
+    <div class="enemy-stats">
+        <span>❤️ 66 HP</span>
+        <span>⚔️ 7 ATK</span>
+        <span>🛡️ 5 DEF</span>
+    </div>
+    <p class="enemy-description">
+        Маленькое тряпичное существо. Выглядит безобидно, но атакует странными 
+        энергетическими шарами. Любит, когда его берут на ручки.
+    </p>
+    <div class="enemy-action">⚡ Действие: Взять на руки / Убаюкать</div>
+</div>
+
+<!-- АСТРОГРАФ (Astrograph) - каноничный враг из ядра -->
+<div class="enemy-card" data-location="КОР">
+    <div class="enemy-image" style="background-image: url('images/джерри спрайт.png');"></div>
+    <h3>АСТРОГРАФ</h3>
+    <div class="enemy-location">📍 КОР</div>
+    <div class="enemy-stats">
+        <span>❤️ 88 HP</span>
+        <span>⚔️ 10 ATK</span>
+        <span>🛡️ 7 DEF</span>
+    </div>
+    <p class="enemy-description">
+        Загадочное устройство, похожее на телескоп или радар. Изучает звезды и вселенную.
+        Если показать ему звезду — увлечется и перестанет атаковать.
+    </p>
+    <div class="enemy-action">⚡ Действие: Показать звезду / Рассказать о космосе</div>
+</div>
+
+<!-- МОЛОТЕР (Molder) - еще один враг из ядра -->
+<div class="enemy-card" data-location="КОР">
+    <div class="enemy-image" style="background-image: url('images/гифт спрайт.png');"></div>
+    <h3>МОЛОТЕР</h3>
+    <div class="enemy-location">📍 КОР</div>
+    <div class="enemy-stats">
+        <span>❤️ 120 HP</span>
+        <span>⚔️ 12 ATK</span>
+        <span>🛡️ 8 DEF</span>
+    </div>
+    <p class="enemy-description">
+        Странное существо, напоминающее плесень или грибок. Растет в темных углах ядра.
+        Боится света и дезинфекции.
+    </p>
+    <div class="enemy-action">⚡ Действие: Посветить / Продезинфицировать</div>
+</div>
+
+
+            </div>
+        </div>
+
+        <!-- ФУТЕР -->
+        <footer class="footer">
+            <p>*** UNDERTALE FAN GUIDE • СТРАНИЦА ВРАГОВ ***</p>
+                <div style="margin-top: 20px;">
+                <button onclick="setTheme('dark')" style="background: none; border: 2px solid #ff4444; color: #ff4444; padding: 8px 20px; margin: 0 5px; cursor: pointer; font-family: 'Courier New', monospace;">🌙 Тёмная</button>
+                <button onclick="setTheme('light')" style="background: none; border: 2px solid #ff4444; color: #ff4444; padding: 8px 20px; margin: 0 5px; cursor: pointer; font-family: 'Courier New', monospace;">☀️ Светлая</button>
+            </div>
+        </footer>
+
+
+    <!-- МОДАЛЬНОЕ ОКНО -->
+    <div class="modal-overlay" id="enemyModal">
+        <div class="modal-content">
+            <span class="modal-close" id="closeModal">&times;</span>
+            <div class="modal-body" id="modalBody">
+                <!-- Сюда будет подставляться информация о враге -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ========== ДАННЫЕ О ВРАГАХ С РАСШИРЕННОЙ ИНФОРМАЦИЕЙ ==========
+        const enemyData = {
+            'ТОРИЭЛЬ': {
+                image: 'images/ториэль спрайт.png',
+                location: 'РУИНЫ',
+                area: 'Конец Руин, тронный зал',
+                stats: ['440 HP', '80 ATK', '80 DEF'],
+                difficulty: '⭐ Низкая (1/10)',
+                music: 'Heartache / Ruins',
+                description: 'Является первым боссом в игре, в бою с которым почти невозможно умереть. Ториэль — бывшая королева Подземелья, которая заботится о тебе, но не хочет отпускать.',
+                action: 'Пощада',
+                tips: [
+                    '• Её атаки очень предсказуемы — просто стой в проходах между огнём',
+                    '• Когда твоё HP упадёт до 2-3, она перестанет атаковать',
+                    '• Выбирай "Пощадить" каждый ход'
+                ],
+                weaknesses: ['Нет слабостей — она не хочет тебя убивать'],
+                reward: '❌ Нет награды (в пацифисте) / 1500 EXP (в геноциде)',
+                facts: [
+                    '• Ториэль — мать Азриэля',
+                    '• Она покинула трон и ушла жить в Руины, чтобы защищать людей',
+                    '• Её тема "Heartache" считается одной из самых грустных в игре'
+                ]
+            },
+            'НАПСТАБЛУК': {
+                image: 'images/блук спрайт.png',
+                location: 'РУИНЫ',
+                area: 'Руины, в разных комнатах',
+                stats: ['5 HP', '5 ATK', '5 DEF'],
+                difficulty: '⭐ Очень легкая (0.5/10)',
+                music: 'Ghost Fight / Enemy Approaching',
+                description: 'Призрак, который не хочет драться. Если пощадить — просто уйдет. Напстаблук — очень застенчивое существо, которое предпочитает уединение.',
+                action: 'Приободрить',
+                tips: [
+                    '• Не атакуй — просто приободряй',
+                    '• Он уйдет сам через несколько ходов',
+                    '• Если атаковать, он расстроится'
+                ],
+                weaknesses: ['Стеснительность', 'Боится внимания'],
+                reward: 'Дружба (в пацифисте) / 0 EXP',
+                facts: [
+                    '• Напстаблук — первый призрак в игре',
+                    '• Он появится позже в нескольких побочных квестах',
+                    '• Любит музыку и часто напевает'
+                ]
+            },
+            'ВЕГЕТОИД': {
+                image: 'images/вегетоид спрайт.png',
+                location: 'РУИНЫ',
+                area: 'Руины, разные комнаты',
+                stats: ['72 HP', '6 ATK', '6 DEF'],
+                difficulty: '⭐ Легкая (1/10)',
+                music: 'Enemy Approaching',
+                description: 'Буквально живая морковка, которая ОЧЕНЬ хочет тебя накормить. Вегетоид искренне верит, что его долг — накормить путника.',
+                action: 'Поужинать',
+                tips: [
+                    '• Лучше согласиться на ужин',
+                    '• Если отказаться, может обидеться',
+                    '• Не пытайся его съесть — это плохая идея'
+                ],
+                weaknesses: ['Голоден', 'Любит, когда ценят его стряпню'],
+                reward: 'Полезный предмет после ужина',
+                facts: [
+                    '• Вегетоид — живой овощ',
+                    '• Он искренне хочет накормить всех вокруг',
+                    '• Его еда на самом деле съедобна'
+                ]
+            },
+            'МИНИЖЕЛЛ': {
+                image: 'images/минижел спрайт.png',
+                location: 'РУИНЫ, ВОДОПАД',
+                area: 'Разные локации',
+                stats: ['50 HP', '4-7 ATK', '0 DEF'],
+                difficulty: '⭐ Средняя (3/10)',
+                music: 'Enemy Approaching',
+                description: 'Кокетливое, но безмозглое желе... Минижеллы — странные существа, которые появляются в нескольких локациях. Их атаки непредсказуемы.',
+                action: 'Сексуальное покачивание бедрами',
+                tips: [
+                    '• Двигайся хаотично — их атаки непредсказуемы',
+                    '• Действие работает, как ни странно',
+                    '• Не пытайся понять логику'
+                ],
+                weaknesses: ['Сексуальное покачивание бедрами (да, серьезно)'],
+                reward: 'Опыт и золото',
+                facts: [
+                    '• Да, действие так и называется',
+                    '• И да, это работает',
+                    '• Лучше не спрашивай как'
+                ]
+            },
+            'МАНЕКЕН': {
+                image: 'images/манекен спрайт.png',
+                location: 'РУИНЫ',
+                area: 'Первая комната после дома Ториэль',
+                stats: ['15 HP', '0 ATK', '0 [-5] DEF'],
+                difficulty: '⭐ Тренировочный (0/10)',
+                music: 'Enemy Approaching',
+                description: 'Сердце из хлопка и глаз-кнопка. Ты — зеница моего ока. Манекен — один из самых безобидных врагов. Он просто стоит и смотрит.',
+                action: 'Поговорить',
+                tips: [
+                    '• Можно просто пощадить',
+                    '• Можно поговорить — это мило',
+                    '• Не бей его, он беззащитный'
+                ],
+                weaknesses: ['Одинок'],
+                reward: 'Первый урок доброты',
+                facts: [
+                    '• Это первый враг в игре',
+                    '• С него начинается обучение',
+                    '• Если долго говорить, он поделится мыслями'
+                ]
+            },
+            'ВИМСАН': {
+                image: 'images/вимсан спрайт.png',
+                location: 'РУИНЫ',
+                area: 'Руины, разные комнаты',
+                stats: ['10 HP', '4 ATK', '0 DEF'],
+                difficulty: '⭐ Легкая (1/10)',
+                music: 'Enemy Approaching',
+                description: 'Этот монстр слишком чувствителен для битвы... Вимсаны очень ранимые существа. Они легко расстраиваются и могут даже заплакать.',
+                action: 'Утешить',
+                tips: [
+                    '• Не атакуй — они расплачутся',
+                    '• Просто утешь их',
+                    '• Прояви доброту'
+                ],
+                weaknesses: ['Обидчивость', 'Слезы'],
+                reward: 'Благодарность',
+                facts: [
+                    '• Им просто нужна поддержка',
+                    '• Они очень ранимые',
+                    '• Лучший способ — утешить'
+                ]
+            },
+            'МИГОСП': {
+                image: 'images/мигосп спрайт.png',
+                location: 'РУИНЫ',
+                area: 'Руины, скрытые комнаты',
+                stats: ['40 HP', '7 ATK', '5 DEF'],
+                difficulty: '⭐ Средняя (3/10)',
+                music: 'Enemy Approaching',
+                description: 'Он выглядит злым, но он просто не с той толпой... Наслаждается временем, проводимым в одиночестве.',
+                action: 'Поговорить, когда он останется один',
+                tips: [
+                    '• Дай ему пространство',
+                    '• Подожди, пока другие враги уйдут',
+                    '• Только тогда он станет дружелюбным'
+                ],
+                weaknesses: ['Интроверт'],
+                reward: 'Опыт и золото',
+                facts: [
+                    '• Ему нужно время привыкнуть',
+                    '• Не любит компании',
+                    '• В одиночестве становится милым'
+                ]
+            },
+            'ЛУКС': {
+                image: 'images/лукс спрайт.png',
+                location: 'РУИНЫ',
+                area: 'Руины',
+                stats: ['50 HP', '6 ATK', '6 DEF'],
+                difficulty: '⭐ Средняя (3/10)',
+                music: 'Enemy Approaching',
+                description: 'Не дразните его. Фамилия: Айуокер.',
+                action: 'Не дразнить',
+                tips: [
+                    '• Не дразни его — обидится',
+                    '• Просто будь вежлив',
+                    '• Шутки про имя не работают'
+                ],
+                weaknesses: ['Имя'],
+                reward: 'Опыт и золото',
+                facts: [
+                    '• Лукс Айуокер',
+                    '• Да, это каламбур',
+                    '• Понял? Не дразни его!'
+                ]
+            },
+            'ФРОГГИТ': {
+                image: 'images/фроггит спрайт.png',
+                location: 'РУИНЫ',
+                area: 'Руины, везде',
+                stats: ['30 HP', '5 ATK', '4 DEF'],
+                difficulty: '⭐ Очень легкая (0.5/10)',
+                music: 'Enemy Approaching',
+                description: 'Маленький лягушкоподобный монстр. Если с ним подружиться, может пропустить ход. Фроггиты очень дружелюбны и любят, когда с ними разговаривают.',
+                action: 'Поговорить',
+                tips: [
+                    '• Просто поговори с ним',
+                    '• Похвали его прыжки',
+                    '• Станет другом и пропустит ход'
+                ],
+                weaknesses: ['Лесть', 'Комплименты'],
+                reward: 'Дружба',
+                facts: [
+                    '• Один из первых врагов',
+                    '• Учит, что можно не драться',
+                    '• Очень социальные'
+                ]
+            },
+            'ЛЕДОШЛЯП': {
+                image: 'images/ледошляп спрайт.png',
+                location: 'СНОУДИН',
+                area: 'Сноудин, снежные поля',
+                stats: ['48 HP', '11 ATK', '4 DEF'],
+                difficulty: '⭐ Средняя (3/10)',
+                music: 'Snowy / Enemy Approaching',
+                description: 'Этот подросток интересуется, почему его зовут не "айс-хэт".',
+                action: 'Игнорировать',
+                tips: [
+                    '• Лучше не обращать внимания',
+                    '• Если долго игнорить — обидится и уйдет',
+                    '• Не упоминай имя'
+                ],
+                weaknesses: ['Подростковые комплексы'],
+                reward: 'Опыт и золото',
+                facts: [
+                    '• Ему не нравится его имя',
+                    '• Хочет называться "айс-хэт"',
+                    '• Типичный подросток'
+                ]
+            },
+            'ПАПАЙРУС': {
+                image: 'images/папи спрайт.png',
+                location: 'СНОУДИН',
+                area: 'Финал Сноудина, после головоломок',
+                stats: ['680 HP', '8 ATK', '20 DEF'],
+                difficulty: '⭐ Легкая, но нервная (2/10)',
+                music: 'Bonetrousle / Nyeh Heh Heh!',
+                description: 'Он любит говорить: "Нье-хе-хе!" Папайрус — великий скелет-ловкач, который мечтает поймать человека. На самом деле он просто хочет подружиться.',
+                action: 'Пощада',
+                tips: [
+                    '• Атакуй, чтобы уменьшить HP — это нормально для пацифиста',
+                    '• Синие кости: стой неподвижно',
+                    '• Обычные кости: перепрыгивай',
+                    '• В синем режиме ты не можешь прыгать — проходи сквозь синие кости'
+                ],
+                weaknesses: ['Лесть', 'Комплименты его ловушкам'],
+                reward: 'Дружба и доступ к его дому',
+                facts: [
+                    '• Папайрус — брат Санса',
+                    '• Он готовит спагетти, но они ужасны',
+                    '• После битвы можно пойти к нему на "свидание"'
+                ]
+            },
+            'САНС': {
+                image: 'images/санси спрайт.png',
+                location: 'СНОУДИН / ТРОННЫЙ ЗАЛ',
+                area: 'Сноудин (обычная встреча) / Тронный зал (геноцид)',
+                stats: ['1 HP', '1 ATK', '1 DEF'],
+                difficulty: '💀 Адская (10/10) — только в геноциде',
+                music: 'Megalovania',
+                description: 'Очень обаятельный скелет, которому до лучевой кости твои проблемы. Санс — брат Папайруса, который работает стражником, но на самом деле просто ленится. В геноциде он — финальный босс.',
+                action: 'Будь дружелюбным бро / ☠️ ВЫЖИВИ',
+                tips: [
+                    '• ОН НЕ СОБЛЮДАЕТ ОЧЕРЕДЬ ХОДОВ — атакует в твой ход',
+                    '• Статус "Карма" (KR) быстро съедает здоровье',
+                    '• Не промахивайся атакой — иначе получишь 1 урон',
+                    '• Самая длинная атака в игре — около минуты'
+                ],
+                weaknesses: ['Единственное слабое место — его брат'],
+                reward: '9999 EXP и конец игры',
+                facts: [
+                    '• Санс знает о ресетах',
+                    '• Он единственный, кто помнит все твои прохождения',
+                    '• Если не пройти геноцид, он так и останется ленивым стражником'
+                ]
+            },
+            'ТЕММИ!11!!!': {
+                image: 'images/темми спрайт.png',
+                location: 'ВОДОПАД',
+                area: 'Водопад, секретная зона',
+                stats: ['5 HP', '7 ATK', '-20 DEF'],
+                difficulty: '⭐ Легкая (1/10)',
+                music: 'Tem Shop / Temmie Theme',
+                description: 'Любит гладить милых людей. Но у тебя аллергия!',
+                action: 'Пощада',
+                tips: [
+                    '• У него отрицательная защита — любой удар крит',
+                    '• Лучше просто пощадить',
+                    '• Не пытайся гладить — аллергия!'
+                ],
+                weaknesses: ['Аллергия на людей?'],
+                reward: 'Опыт и золото',
+                facts: [
+                    '• Темми — отдельный вид существ',
+                    '• У них свой язык',
+                    '• Хочется погладить, но нельзя'
+                ]
+            },
+            'ЦУНДЕРЕПЛАН': {
+                image: 'images/цун спрайт.png',
+                location: 'ХОТЛЕНД',
+                area: 'Хотленд, лаборатория',
+                stats: ['80 HP', '25 ATK', '26 DEF'],
+                difficulty: '⭐ Средняя (4/10)',
+                music: 'Metal Crusher / Hotland',
+                description: 'Выглядит грубой, но может вы ей втайне нравитесь?',
+                action: 'Приблизиться',
+                tips: [
+                    '• Она говорит "Н-не потому что ты мне нравишься!"',
+                    '• На самом деле ты ей нравишься',
+                    '• Просто будь настойчив'
+                ],
+                weaknesses: ['Цундере'],
+                reward: 'Дружба?',
+                facts: [
+                    '• Классический цундере-персонаж',
+                    '• "Бака!"',
+                    '• На самом деле добрая'
+                ]
+            },
+            'МЕТТАТОН': {
+                image: 'images/мета спрайт.png',
+                location: 'ХОТЛЕНД',
+                area: 'Лаборатория Альфис',
+                stats: ['9999 HP', '10 ATK', '999 DEF'],
+                difficulty: '⭐ Средняя (3/10)',
+                music: 'Metal Crusher / Mettaton EX Theme',
+                description: 'Уверенный в себе, харизматичный и очаровательный телеведущий, который любит драму, экшен и насилие. Мечтает стать звездой.',
+                action: 'Правильно отвечайте на его вопросы',
+                tips: [
+                    '• В желтом режиме стреляй в сердечки',
+                    '• Отвечай на вопросы правильно',
+                    '• В пацифисте превращается в МЕТТАТОН EX'
+                ],
+                weaknesses: ['Рейтинги', 'Зрители'],
+                reward: 'Высокий рейтинг',
+                facts: [
+                    '• В геноциде умирает с одного удара',
+                    '• Мечтает о славе',
+                    '• На самом деле робот'
+                ]
+            },
+            'ЭНДОГЕН': {
+                image: 'images/эндоген спрайт.png',
+                location: 'КОР',
+                area: 'Ядро (Core)',
+                stats: ['100 HP', '9 ATK', '999 DEF'],
+                difficulty: '⭐ Средняя (3/10)',
+                music: 'Core',
+                description: 'Неясно, за сколько собак оно считается. Эндоген — робот-собака, созданный Альфис. Внутри него много собак.',
+                action: 'Погладить',
+                tips: [
+                    '• Чем больше гладишь, тем больше собак вылезает',
+                    '• Бесконечный цикл',
+                    '• Лучше просто пощадить'
+                ],
+                weaknesses: ['Ласка'],
+                reward: 'Опыт',
+                facts: [
+                    '• Внутри реально много собак',
+                    '• Альфис перестаралась',
+                    '• Собаки бесконечны'
+                ]
+            },
+            'ЛИМОННЫЙ ХЛЕБ': {
+                image: 'images/хлеб спрайт.png',
+                location: 'КОР',
+                area: 'Ядро (Core)',
+                stats: ['100 HP', '8 ATK', '9999 DEF'],
+                difficulty: '⭐ Странная (???/10)',
+                music: 'Core',
+                description: 'Добро пожаловать в мой особый ад. Лимонный хлеб — один из самых странных врагов в игре.',
+                action: 'Пахнет сладкими лимонами',
+                tips: [
+                    '• Просто нюхай',
+                    '• Не спрашивай что это',
+                    '• Прими как данность'
+                ],
+                weaknesses: ['Лимонный'],
+                reward: '???',
+                facts: [
+                    '• Это отсылка к веб-комиксу',
+                    '• Очень странный враг',
+                    '• Пахнет лимонами'
+                ]
+            },
+
+'МОЛОТЕР': {
+    image: 'images/гифт спрайт.png',  
+    location: 'КОР',
+    area: 'Ядро (Core)',
+    stats: ['120 HP', '12 ATK', '8 DEF'],
+    difficulty: '⭐ Средняя (4/10)',
+    music: 'Core / Molder Theme',
+    description: 'Странное существо, напоминающее плесень или грибок. Растет в темных углах ядра. Боится света и дезинфекции.',
+    action: 'Посветить / Продезинфицировать',
+    tips: [
+        '• Боится яркого света',
+        '• Не любит чистоту',
+        '• Лучше не трогать голыми руками'
+    ],
+    weaknesses: ['Свет', 'Чистота', 'Антисептики'],
+    reward: 'Опыт и золото',
+    facts: [
+        '• Молотеры растут колониями',
+        '• Питаются радиацией ядра',
+        '• Очень живучие'
+    ]
+}, 
+
+'ГРИЛЛБИ': {
+    image: 'images/грилби спрайт.png',
+    location: 'СНОУДИН',
+    area: 'Бар Гриллби, Сноудин',
+    stats: ['??? HP', '??? ATK', '??? DEF'],
+    difficulty: '⭐ Не боевой персонаж',
+    music: 'Bar Theme / Grillby\'s',
+    description: 'Таинственный бармен, состоящий из пламени. В баре Гриллби собираются все скелеты и монстры Сноудина. Редко говорит, но всегда слушает.',
+    action: 'Заказать напиток',
+    tips: [
+        '• Он не атакует — это мирный NPC',
+        '• Можно заказать еду и напитки',
+        '• Любит, когда посетителям нравится его стряпня'
+    ],
+    weaknesses: ['Нет — он не боевой персонаж'],
+    reward: 'Еда и напитки',
+    facts: [
+        '• Гриллби — один из немногих монстров, которые никогда не сражаются',
+        '• Его пламя теплое, но не обжигает',
+        '• Санс — его лучший клиент'
+    ]
+},
+
+'СНОУДРЕЙК': {
+    image: 'images/сноудрейк спрайт.png',
+    location: 'СНОУДИН',
+    area: 'Сноудин, разные локации',
+    stats: ['60 HP', '9 ATK', '5 DEF'],
+    difficulty: '⭐ Легкая (2/10)',
+    music: 'Snowy / Snowdrake\'s Theme',
+    description: 'Маленький дракончик, который любит шутить. Его шутки иногда бывают несмешными, но он очень старается. Если посмеяться — станет другом.',
+    action: 'Смеяться / Поддержать',
+    tips: [
+        '• Смейся над его шутками, даже если не смешно',
+        '• Не критикуй — он очень ранимый',
+        '• Если поддержать, поделится опытом'
+    ],
+    weaknesses: ['Любит, когда ценят его юмор'],
+    reward: 'Опыт и золото',
+    facts: [
+        '• Сноудрейк — один из самых молодых монстров',
+        '• Его отец — тоже комик, но они в ссоре',
+        '• Мечтает выступать на сцене с Папайрусом'
+    ]
+},
+
+'ААРОН': {
+    image: 'images/аарон спрайт.png',
+    location: 'ВОДОПАД',
+    area: 'Водопад, водные зоны',
+    stats: ['88 HP', '8 ATK', '6 DEF'],
+    difficulty: '⭐ Средняя (3/10)',
+    music: 'Waterfall / Aaron\'s Theme',
+    description: 'Очень любит свои мышцы. Если им восхищаться, он будет показывать позы вместо атак. Не любит, когда его игнорируют.',
+    action: 'Восхищаться / Игнорировать',
+    tips: [
+        '• Восхищайся его бицепсами — он будет позировать',
+        '• Если игнорировать — обидится и уйдет',
+        '• Атакует, если не обращать внимания'
+    ],
+    weaknesses: ['Тщеславие', 'Любит комплименты'],
+    reward: 'Опыт и золото',
+    facts: [
+        '• Аарон — единственный монстр, который качает мышцы',
+        '• Он очень гордится своей формой',
+        '• Мечтает стать фитнес-моделью'
+    ]
+},
+
+'ШАЙРЕН': {
+    image: 'images/сирена спрайт.png',
+    location: 'ВОДОПАД',
+    area: 'Водопад, тихие заводи',
+    stats: ['60 HP', '6 ATK', '4 DEF'],
+    difficulty: '⭐ Легкая (2/10)',
+    music: 'Waterfall / Shyren\'s Theme',
+    description: 'Застенчивая русалка. Стесняется петь при других. Если подпевать ей, она обретет уверенность и станет другом.',
+    action: 'Подпевать / Подбодрить',
+    tips: [
+        '• Не атакуй — она испугается',
+        '• Подпевай ей, даже если не попадаешь в ноты',
+        '• Она оценит поддержку'
+    ],
+    weaknesses: ['Стеснительность', 'Любит музыку'],
+    reward: 'Опыт и золото',
+    facts: [
+        '• Шайрен мечтает стать певицей',
+        '• У неё есть сестра, которая выступает в Меттатон-отеле',
+        '• Её песня может растрогать даже Санса'
+    ]
+},
+
+'ВОШУА': {
+    image: 'images/вошуа спрайт.png',
+    location: 'ВОДОПАД',
+    area: 'Водопад, везде',
+    stats: ['45 HP', '6 ATK', '2 DEF'],
+    difficulty: '⭐ Легкая (2/10)',
+    music: 'Waterfall / Enemy Approaching',
+    description: 'Маленькое чистящее существо. Любит мыться и намыливаться. Если дать ему мыло, будет очень рад. В Водопаде их особенно много.',
+    action: 'Дать мыло',
+    tips: [
+        '• Вошуа любит чистоту',
+        '• Если дать мыло — станет другом',
+        '• Не предлагай грязную воду — обидится'
+    ],
+    weaknesses: ['Чистота', 'Мыло'],
+    reward: 'Опыт и золото',
+    facts: [
+        '• Вошуа — одно из немногих существ, которое любит мыться',
+        '• В Водопаде их целая колония',
+        '• Мечтает открыть свою прачечную'
+    ]
+},
+
+'ВУЛКИН': {
+    image: 'images/вулкин спрайт.png', 
+    location: 'ХОТЛЕНД',
+    area: 'Хотленд, вулканические зоны',
+    stats: ['120 HP', '15 ATK', '8 DEF'],
+    difficulty: '⭐ Средняя (3/10)',
+    music: 'Hotland / Vulkin\'s Theme',
+    description: 'Маленький вулкан, который ищет свою любовь. Очень романтичный и страстный. Если проявить симпатию — поделится теплом.',
+    action: 'Флиртовать / Согреться',
+    tips: [
+        '• Он ищет вторую половинку',
+        '• Флиртуй — он растает',
+        '• Не обижай его чувства'
+    ],
+    weaknesses: ['Романтика', 'Одиночество'],
+    reward: 'Опыт и золото',
+    facts: [
+        '• Вулкин очень страстный',
+        '• Его лава — это проявление любви',
+        '• Мечтает найти свою вулканшу'
+    ]
+},
+
+
+'СОБАЧКА': {
+    image: 'images/собака спрайт.png',
+    location: 'ХОТЛЕНД',
+    area: 'Хотленд, разные места',
+    stats: ['50 HP', '5 ATK', '3 DEF'],
+    difficulty: '⭐ Легкая (1/10)',
+    music: 'Dog Theme / Hotland',
+    description: 'Маленькая собачка, которая плохо видит. Замечает только движение. Если стоять смирно — не заметит и пройдет мимо.',
+    action: 'Замереть / Помахать',
+    tips: [
+        '• Не двигайся — она не заметит',
+        '• Если помахать — обрадуется',
+        '• Любит играть в апорт'
+    ],
+    weaknesses: ['Плохое зрение', 'Любовь к игре'],
+    reward: 'Опыт и золото',
+    facts: [
+        '• Собачка — один из многих псов в Подземелье',
+        '• Плохо видит, но отлично слышит',
+        '• Любит, когда кидают палку'
+    ]
+},
+
+'МАЛЯВКА': {
+    image: '',
+    location: 'КОР',
+    area: 'Ядро (Core), детские зоны',
+    stats: ['66 HP', '7 ATK', '5 DEF'],
+    difficulty: '⭐ Легкая (2/10)',
+    music: 'Core / Ragdoll Theme',
+    description: 'Маленькое тряпичное существо. Выглядит безобидно, но атакует странными энергетическими шарами. Любит, когда его берут на ручки.',
+    action: 'Взять на руки / Убаюкать',
+    tips: [
+        '• Не бойся — оно не укусит',
+        '• Если взять на руки — успокоится',
+        '• Любит, когда его укачивают'
+    ],
+    weaknesses: ['Ласка', 'Забота'],
+    reward: 'Опыт и золото',
+    facts: [
+        '• Малявка — одно из экспериментальных творений Альфис',
+        '• Сделано из старых тряпок',
+        '• Очень любит обниматься'
+    ]
+},
+
+'АСТРОГРАФ': {
+    image: 'images/джерри спрайт.png',
+    location: 'КОР',
+    area: 'Ядро (Core), обсерватория',
+    stats: ['88 HP', '10 ATK', '7 DEF'],
+    difficulty: '⭐ Средняя (3/10)',
+    music: 'Core / Astrograph Theme',
+    description: 'Загадочное устройство, похожее на телескоп или радар. Изучает звезды и вселенную. Если показать ему звезду — увлечется и перестанет атаковать.',
+    action: 'Показать звезду / Рассказать о космосе',
+    tips: [
+        '• Покажи ему созвездие',
+        '• Расскажи о космосе — заслушается',
+        '• Не мешай наблюдать'
+    ],
+    weaknesses: ['Любовь к звездам', 'Наука'],
+    reward: 'Опыт и золото',
+    facts: [
+        '• Астрограф ищет внеземную жизнь',
+        '• Считает себя астрономом',
+        '• Мечтает увидеть настоящую звезду'
+    ]
+},
+
+
+        };
+
+        // Получаем элементы
+        const modal = document.getElementById('enemyModal');
+        const modalBody = document.getElementById('modalBody');
+        const closeBtn = document.getElementById('closeModal');
+        const enemyCards = document.querySelectorAll('.enemy-card');
+
+        // Функция открытия модального окна
+        function openModal(enemyName) {
+            const data = enemyData[enemyName];
+            if (!data) {
+                console.log('Нет данных для:', enemyName);
+                return;
+            }
+
+            // Собираем советы
+            let tipsHtml = '';
+            if (data.tips && data.tips.length > 0) {
+                tipsHtml = '<div class="modal-section"><h3>🎯 Советы по битве</h3><ul>';
+                data.tips.forEach(tip => { tipsHtml += `<li>${tip}</li>`; });
+                tipsHtml += '</ul></div>';
+            }
+
+            // Собираем слабые места
+            let weaknessesHtml = '';
+            if (data.weaknesses && data.weaknesses.length > 0) {
+                weaknessesHtml = '<div class="modal-section"><h3>💔 Слабые места</h3><ul>';
+                data.weaknesses.forEach(w => { weaknessesHtml += `<li>${w}</li>`; });
+                weaknessesHtml += '</ul></div>';
+            }
+
+            // Собираем факты
+            let factsHtml = '';
+            if (data.facts && data.facts.length > 0) {
+                factsHtml = '<div class="modal-extra"><h3>📖 Интересные факты</h3><ul>';
+                data.facts.forEach(fact => { factsHtml += `<li>${fact}</li>`; });
+                factsHtml += '</ul></div>';
+            }
+
+            // Формируем HTML
+            modalBody.innerHTML = `
+                <h2>${enemyName}</h2>
+                <div class="modal-image" style="background-image: url('${data.image}'); background-size: contain; background-color: #000000;"></div>
+                
+                <div class="modal-location">📍 ${data.location}</div>
+                <div class="modal-area">🗺️ ${data.area || data.location}</div>
+                
+                <div class="modal-stats">
+                    <span>❤️ ${data.stats[0]}</span>
+                    <span>⚔️ ${data.stats[1]}</span>
+                    <span>🛡️ ${data.stats[2]}</span>
+                </div>
+                
+                <div class="modal-difficulty">${data.difficulty || '⭐ Не указана'}</div>
+                <div class="modal-music">🎵 ${data.music || 'Enemy Approaching'}</div>
+                
+                <div class="modal-description">
+                    ${data.description}
+                </div>
+                
+                <div class="modal-section">
+                    <h3>⚡ Действие</h3>
+                    <p>${data.action}</p>
+                </div>
+                
+                ${tipsHtml}
+                ${weaknessesHtml}
+                
+                <div class="modal-section">
+                    <h3>🏆 Награда</h3>
+                    <p>${data.reward || 'Опыт и золото'}</p>
+                </div>
+                
+                ${factsHtml}
+            `;
+
+            modal.classList.add('active');
+            document.body.classList.add('modal-open');
+        }
+
+        // Функция закрытия
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.classList.remove('modal-open');
+        }
+
+        // Добавляем обработчики на карточки
+        enemyCards.forEach(card => {
+            card.addEventListener('click', function(e) {
+                const enemyName = this.querySelector('h3').textContent.trim();
+                openModal(enemyName);
+            });
+        });
+
+        // Закрытие по крестику
+        closeBtn.addEventListener('click', closeModal);
+
+        // Закрытие по клику на фон
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Закрытие по ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+    </script>
+
+    <script>
+        // Переключение тем
+        function setTheme(theme) {
+            if (theme === 'light') {
+                document.body.classList.add('light-theme');
+                localStorage.setItem('site-theme', 'light');
+            } else {
+                document.body.classList.remove('light-theme');
+                localStorage.setItem('site-theme', 'dark');
+            }
+        }
+        
+        // При загрузке проверяем сохраненную тему
+        window.addEventListener('load', function() {
+            const savedTheme = localStorage.getItem('site-theme');
+            if (savedTheme === 'light') {
+                document.body.classList.add('light-theme');
+            }
+        });
+    </script>
+
+</body>
+</html>

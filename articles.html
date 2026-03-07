@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UnderTale: Гайды | Статьи</title>
+
+    <!-- СКРИПТ СВЕТЛОЙ ТЕМЫ -->
+    <script>
+        (function() {
+            try {
+                const savedTheme = localStorage.getItem('site-theme');
+                if (savedTheme === 'light') {
+                    // Добавляем класс к html
+                    document.documentElement.classList.add('light-theme');
+                    
+                    // Как только body загрузится, добавим класс и ему
+                    if (document.body) {
+                        document.body.classList.add('light-theme');
+                    } else {
+                        // Ждем загрузки DOM
+                        document.addEventListener('DOMContentLoaded', function() {
+                            document.body.classList.add('light-theme');
+                        });
+                    }
+                    
+                    // Временные стили чтобы не мигало
+                    const style = document.createElement('style');
+                    style.textContent = `
+                        .light-theme {
+                            background-color: #fdf1ff;
+                            color: #222222;
+                        }
+                        .light-theme .wide-container {
+                            background-color: #ffffff;
+                            border-left: 2px solid #864991;
+                            border-right: 2px solid #864991;
+                        }
+                    `;
+                    document.head.appendChild(style);
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+     <link rel="stylesheet" href="статьи-css.css">
+     <link rel="stylesheet" href="светлая-тема.css">
+</head>
+
+
+<body>
+    <div class="wide-container">
+        <!-- ШАПКА -->
+        <div class="header">
+            <h1>UNDERTALE</h1>
+            <p>Энциклопедия Подземелья</p>
+        </div>
+
+        <!-- НАВИГАЦИЯ -->
+        <div class="nav-menu">
+            <a href="index.html" class="nav-btn">❤️ ГЛАВНАЯ</a>
+            <a href="enemies.html" class="nav-btn">⚔️ ВРАГИ</a>
+            <a href="items.html" class="nav-btn">🎒 ПРЕДМЕТЫ</a>
+            <a href="articles.html" class="nav-btn active">📚 СТАТЬИ</a>
+        </div>
+
+        <!-- ОСНОВНОЙ КОНТЕНТ -->
+        <div class="content">
+            <h2 class="page-title">📚 СТАТЬИ ПО ИГРЕ</h2>
+            <p class="page-description">Гайды, лор, секреты и теорикрафтинг</p>
+
+            <!-- СЕТКА СО СТАТЬЯМИ -->
+            <div class="articles-grid">
+                <!-- Статья 1: Самое сильное оружие -->
+                <a href="статьи/настоящий нож статья.html" class="article-card">
+                    <div class="article-image" style="background-image: url('images/настоящий нож.png');"></div>
+                    <h3>КАКОЕ ЖЕ САМОЕ<br>СИЛЬНОЕ ОРУЖИЕ В ИГРЕ?</h3>
+                    <p class="article-preview">
+                        Разберем, почему "настоящий нож" переоценен. 
+                        Сравним урон, доступность и влияние на прохождение.
+                    </p>
+                    <div class="article-meta">
+                        <span>⚔️ Гайд</span>
+                        <span class="read-more">Читать →</span>
+                    </div>
+                </a>
+
+                <!-- Статья 2: Все концовки -->
+                <a href="статьи/Все концовки.html" class="article-card">
+                    <div class="article-image" style="background-image: url('images/для концовок.png');"></div>
+                    <h3>Все концовки</h3>
+                    <p class="article-preview">
+                       Пацифист, Геноцид и Нейтрал... 
+                       Больше ли трех концовок в игре?
+                    </p>
+                    <div class="article-meta">
+                        <span>👾 Факты</span>
+                        <span class="read-more">Читать →</span>
+
+                    </div>
+                </a>
+
+                <!-- Статья 3: Тактики против боссов -->
+                <a href="статьи/Боссы.html" class="article-card">
+                    <div class="article-image" style="background-image: url('images/боссы.png');"></div>
+                    <h3>ТАКТИКИ ПРОТИВ<br>ВСЕХ БОССОВ</h3>
+                    <p class="article-preview">
+                        Полный гайд по прохождению всех боссов для Нейтрала, Пацифиста и Геноцида. От Ториэль до Санса.
+                    </p>
+                    <div class="article-meta">
+                        <span>⚔️ Гайд</span>
+                        <span class="read-more">Читать →</span>
+                    </div>
+                </a>
+
+                <!-- Статья 4: Подвал Санса -->
+                <a href="статьи/Подвал.html" class="article-card">
+                    <div class="article-image" style="background-image: url('images/подвал.png');"></div>
+                    <h3>ТАЙНЫЙ ПОДВАЛ САНСА</h3>
+                    <p class="article-preview">
+                        Секреты, пасхалки и теории о самом загадочном месте в игре. Как попасть и что там скрыто?
+                    </p>
+                    <div class="article-meta">
+                        <span>👁️ Секреты</span>
+                        <span class="read-more">Читать →</span>
+                    </div>
+                </a>
+
+          
+            </div>
+        </div>
+
+        <!-- ФУТЕР -->
+        <footer class="footer">
+            <p>*** UNDERTALE FAN GUIDE • СТРАНИЦА СТАТЕЙ ***</p>
+            <div style="margin-top: 20px;">
+                <button onclick="setTheme('dark')" style="background: none; border: 2px solid #ff4444; color: #ff4444; padding: 8px 20px; margin: 0 5px; cursor: pointer; font-family: 'Courier New', monospace;">🌙 Тёмная</button>
+                <button onclick="setTheme('light')" style="background: none; border: 2px solid #ff4444; color: #ff4444; padding: 8px 20px; margin: 0 5px; cursor: pointer; font-family: 'Courier New', monospace;">☀️ Светлая</button>
+            </div>
+        </footer>
+
+    <script>
+        // Переключение тем
+        function setTheme(theme) {
+            if (theme === 'light') {
+                document.body.classList.add('light-theme');
+                localStorage.setItem('site-theme', 'light');
+            } else {
+                document.body.classList.remove('light-theme');
+                localStorage.setItem('site-theme', 'dark');
+            }
+        }
+        
+        // При загрузке проверяем сохраненную тему
+        window.addEventListener('load', function() {
+            const savedTheme = localStorage.getItem('site-theme');
+            if (savedTheme === 'light') {
+                document.body.classList.add('light-theme');
+            }
+        });
+    </script>
+
+        </footer>
+    </div>
+</body>
+</html>

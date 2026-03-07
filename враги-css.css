@@ -1,0 +1,948 @@
+/* ===== СТИЛИ ДЛЯ СТРАНИЦЫ ВРАГОВ ===== */
+
+/* ===== БАЗОВЫЕ СТИЛИ ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    background-color: #0a0a0a;
+    color: #f0f0f0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* ===== КОНТЕЙНЕР ===== */
+.wide-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    background-color: #0a0a0a;
+    border-left: 2px solid #ff4444;
+    border-right: 2px solid #ff4444;
+    box-shadow: 0 0 50px rgba(255, 68, 68, 0.2);
+    min-height: 100vh;
+}
+
+/* ===== ФОНОВЫЕ ЗВЕЗДОЧКИ ===== */
+.wide-container::before {
+    content: "***";
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    font-size: 200px;
+    color: rgba(255, 255, 255, 0.02);
+    font-weight: bold;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ===== ШАПКА ===== */
+.header {
+    text-align: center;
+    padding: 40px 60px;
+    border-bottom: 1px dashed #ff4444;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 3.5em;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    color: #ffffff;
+    text-shadow: 4px 4px 0 #ff4444;
+}
+
+.header p {
+    color: #aaaaaa;
+    font-size: 1.3em;
+    margin-top: 15px;
+}
+
+/* ===== НАВИГАЦИЯ ===== */
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0 60px 30px 60px;
+    flex-wrap: wrap;
+}
+
+.nav-btn {
+    background: none;
+    border: 3px solid #ff4444;
+    color: #f0f0f0;
+    font-size: 1.3em;
+    padding: 10px 25px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.8);
+    min-width: 130px;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.nav-btn:hover {
+    background-color: #ff4444;
+    color: #0a0a0a;
+    transform: scale(1.05);
+    box-shadow: 0 0 30px #ff4444;
+}
+
+.nav-btn.active {
+    background-color: #ff4444;
+    color: #0a0a0a;
+    border-color: white;
+}
+
+/* ===== ОСНОВНОЙ КОНТЕНТ ===== */
+.content {
+    padding: 20px 60px 40px 60px;
+}
+
+/* ===== ЗАГОЛОВОК РАЗДЕЛА ===== */
+.page-title {
+    font-size: 2.5em;
+    color: #ff4444;
+    margin-bottom: 10px;
+    text-align: center; 
+    border-left: none;
+    padding-left: 0;
+}
+
+.page-description {
+    color: #aaa;
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    text-align: center;
+    margin-left: 0;
+}
+
+/* ===== ФИЛЬТРЫ ===== */
+.filters {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-top: 2px solid #ff4444;
+    border-bottom: 2px solid #ff4444;
+    padding: 20px 0;
+}
+
+.filter-btn {
+    background: none;
+    border: 2px solid #333;
+    color: #aaa;
+    font-size: 1.1em;
+    padding: 8px 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.filter-btn:hover {
+    border-color: #ff4444;
+    color: #ff4444;
+}
+
+/* СКРЫТЫЕ РАДИО-КНОПКИ ДЛЯ ФИЛЬТРОВ */
+.filter-radio {
+    display: none;
+}
+
+/* ПОКАЗЫВАЕМ ВСЕХ ВРАГОВ ПО УМОЛЧАНИЮ */
+#filter-all:checked ~ .wide-container .content .enemy-card {
+    display: flex;
+}
+
+/* ФИЛЬТР ДЛЯ РУИН */
+#filter-ruins:checked ~ .wide-container .content .enemy-card:not([data-location*="РУИНЫ"]) {
+    display: none;
+}
+
+/* ФИЛЬТР ДЛЯ СНОУДИНА */
+#filter-snowdin:checked ~ .wide-container .content .enemy-card:not([data-location*="СНОУДИН"]) {
+    display: none;
+}
+
+/* ФИЛЬТР ДЛЯ ВОДОПАДА */
+#filter-waterfall:checked ~ .wide-container .content .enemy-card:not([data-location*="ВОДОПАД"]) {
+    display: none;
+}
+
+/* ФИЛЬТР ДЛЯ ХОТЛЕНДА */
+#filter-hotland:checked ~ .wide-container .content .enemy-card:not([data-location*="ХОТЛЕНД"]) {
+    display: none;
+}
+
+/* ФИЛЬТР ДЛЯ КОРА */
+#filter-core:checked ~ .wide-container .content .enemy-card:not([data-location*="КОР"]) {
+    display: none;
+}
+
+/* АКТИВНАЯ КНОПКА ФИЛЬТРА */
+#filter-all:checked ~ .wide-container .content label[for="filter-all"],
+#filter-ruins:checked ~ .wide-container .content label[for="filter-ruins"],
+#filter-snowdin:checked ~ .wide-container .content label[for="filter-snowdin"],
+#filter-waterfall:checked ~ .wide-container .content label[for="filter-waterfall"],
+#filter-hotland:checked ~ .wide-container .content label[for="filter-hotland"],
+#filter-core:checked ~ .wide-container .content label[for="filter-core"] {
+    background-color: #ff4444;
+    border-color: #ff4444;
+    color: #0a0a0a;
+}
+
+/* ===== СЕТКА КАРТОЧЕК ===== */
+.enemies-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+/* ===== КАРТОЧКА ВРАГА ===== */
+.enemy-card {
+    background-color: #1a1a1a;
+    border: 2px solid #333;
+    padding: 25px;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.enemy-card:hover {
+    border-color: #ff4444;
+    transform: translateY(-5px);
+    box-shadow: 0 20px 30px rgba(255, 68, 68, 0.2);
+}
+
+.enemy-image {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 20px;
+    border: 2px solid #ff4444;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #2a2a2a;
+}
+
+.enemy-card h3 {
+    color: #ff4444;
+    font-size: 2em;
+    margin-bottom: 15px;
+    border-bottom: 2px dotted #ff4444;
+    padding-bottom: 10px;
+}
+
+.enemy-location {
+    color: #ffaa44;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.enemy-stats {
+    margin: 15px 0;
+    color: #aaa;
+    font-size: 1.1em;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.enemy-stats span {
+    color: #ffaa44;
+    font-weight: bold;
+}
+
+.enemy-description {
+    color: #ccc;
+    font-style: italic;
+    margin: 15px 0;
+    font-size: 1.1em;
+    line-height: 1.5;
+}
+
+.enemy-action {
+    margin-top: 15px;
+    color: #aaa;
+    border-top: 1px solid #333;
+    padding-top: 15px;
+    font-size: 1.1em;
+    text-align: center;
+    color: #ff4444;
+}
+
+/* ===== МОДАЛЬНЫЕ ОКНА ===== */
+
+/* Затемнение фона */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Активное затемнение */
+.modal-overlay.active {
+    display: flex;
+}
+
+/* Само модальное окно */
+.modal-content {
+    background-color: #1a1a1a;
+    border: 3px solid #ff4444;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    animation: modalAppear 0.3s ease;
+    box-shadow: 0 0 50px rgba(255, 68, 68, 0.3);
+}
+
+/* Анимация появления */
+@keyframes modalAppear {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Кнопка закрытия */
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 2em;
+    color: #ff4444;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 1001;
+}
+
+.modal-close:hover {
+    color: #ff8888;
+    transform: scale(1.1);
+}
+
+/* Контент внутри модального окна */
+.modal-body {
+    padding: 40px 30px;
+}
+
+/* Заголовок в модальном окне */
+.modal-body h2 {
+    color: #ff4444;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    border-bottom: 2px dotted #ff4444;
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+/* Изображение в модальном окне */
+.modal-image {
+    width: 100%;
+    height: 250px;
+    margin: 20px 0;
+    border: 3px solid #ff4444;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #2a2a2a;
+}
+
+/* Характеристики в модальном окне */
+.modal-stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 25px 0;
+    font-size: 1.3em;
+}
+
+.modal-stats span {
+    color: #ffaa44;
+    font-weight: bold;
+}
+
+/* Локация в модальном окне */
+.modal-location {
+    text-align: center;
+    color: #ffaa44;
+    font-size: 1.3em;
+    margin: 15px 0;
+}
+
+.modal-area {
+    text-align: center;
+    color: #ffaa88;
+    font-size: 1.1em;
+    margin: 5px 0 15px 0;
+    font-style: italic;
+}
+
+.modal-difficulty {
+    text-align: center;
+    color: #ff8888;
+    font-size: 1.2em;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.modal-music {
+    text-align: center;
+    color: #aa88ff;
+    font-size: 1.2em;
+    margin: 10px 0 20px 0;
+}
+
+/* Описание в модальном окне */
+.modal-description {
+    color: #f0f0f0;
+    font-size: 1.2em;
+    line-height: 1.8;
+    margin: 25px 0;
+    text-align: justify;
+}
+
+.modal-section {
+    background-color: #1a1a1a;
+    padding: 15px 20px;
+    margin: 20px 0;
+    border-left: 5px solid #ffaa44;
+}
+
+.modal-section h3 {
+    color: #ffaa44;
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+.modal-section ul {
+    margin: 10px 0 0 20px;
+    color: #ddd;
+}
+
+.modal-section li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+/* Действие в модальном окне */
+.modal-action {
+    text-align: center;
+    color: #ff4444;
+    font-size: 1.4em;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px dashed #ff4444;
+}
+
+/* Дополнительная информация */
+.modal-extra {
+    background-color: #2a2a2a;
+    padding: 20px;
+    margin: 20px 0;
+    border-left: 5px solid #ff4444;
+}
+
+.modal-extra h3 {
+    color: #ffaa44;
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+.modal-extra ul {
+    margin: 10px 0 0 20px;
+    color: #ccc;
+}
+
+.modal-extra li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+/* Скрываем скролл на body когда модальное окно открыто */
+body.modal-open {
+    overflow: hidden;
+}
+
+/* ===== ПАГИНАЦИЯ ===== */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 40px 0;
+}
+
+.page-btn {
+    background: none;
+    border: 2px solid #ff4444;
+    color: #ff4444;
+    font-size: 1.2em;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    min-width: 45px;
+}
+
+.page-btn:hover {
+    background-color: #ff4444;
+    color: #0a0a0a;
+}
+
+.page-btn.active-page {
+    background-color: #ff4444;
+    color: #0a0a0a;
+}
+
+/* ===== ФУТЕР ===== */
+.footer {
+    background-color: #0a0a0a;
+    padding: 30px 60px;
+    text-align: center;
+    color: #666;
+    font-size: 1em;
+    border-top: 2px solid #ff4444;
+}
+
+/* ===== АДАПТАЦИЯ ===== */
+@media (max-width: 768px) {
+    .wide-container {
+        max-width: 100%;
+    }
+    .header, .content, .nav-menu, .footer {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .enemies-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ФИЛЬТРЫ */
+.filters {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-top: 2px solid #ff4444;
+    border-bottom: 2px solid #ff4444;
+    padding: 20px 0;
+}
+
+.filter-btn {
+    background: none;
+    border: 2px solid #333;
+    color: #aaa;
+    font-size: 1.1em;
+    padding: 8px 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.filter-btn:hover {
+    border-color: #ff4444;
+    color: #ff4444;
+}
+
+/* СКРЫТЫЕ РАДИО-КНОПКИ ДЛЯ ФИЛЬТРОВ */
+.filter-radio {
+    display: none;
+}
+
+/* ПОКАЗЫВАЕМ ВСЕХ ВРАГОВ ПО УМОЛЧАНИЮ */
+#filter-all:checked ~ .wide-container .content .enemy-card {
+    display: flex;
+}
+
+/* ФИЛЬТР ДЛЯ РУИН */
+#filter-ruins:checked ~ .wide-container .content .enemy-card:not([data-location*="РУИНЫ"]) {
+    display: none;
+}
+
+/* ФИЛЬТР ДЛЯ СНОУДИНА */
+#filter-snowdin:checked ~ .wide-container .content .enemy-card:not([data-location*="СНОУДИН"]) {
+    display: none;
+}
+
+/* ФИЛЬТР ДЛЯ ВОДОПАДА */
+#filter-waterfall:checked ~ .wide-container .content .enemy-card:not([data-location*="ВОДОПАД"]) {
+    display: none;
+}
+
+/* ФИЛЬТР ДЛЯ ХОТЛЕНДА */
+#filter-hotland:checked ~ .wide-container .content .enemy-card:not([data-location*="ХОТЛЕНД"]) {
+    display: none;
+}
+
+/* ФИЛЬТР ДЛЯ КОРА */
+#filter-core:checked ~ .wide-container .content .enemy-card:not([data-location*="КОР"]) {
+    display: none;
+}
+
+/* АКТИВНАЯ КНОПКА ФИЛЬТРА */
+#filter-all:checked ~ .wide-container .content label[for="filter-all"],
+#filter-ruins:checked ~ .wide-container .content label[for="filter-ruins"],
+#filter-snowdin:checked ~ .wide-container .content label[for="filter-snowdin"],
+#filter-waterfall:checked ~ .wide-container .content label[for="filter-waterfall"],
+#filter-hotland:checked ~ .wide-container .content label[for="filter-hotland"],
+#filter-core:checked ~ .wide-container .content label[for="filter-core"] {
+    background-color: #ff4444;
+    border-color: #ff4444;
+    color: #0a0a0a;
+}
+
+/* СЕТКА КАРТОЧЕК */
+.enemies-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+/* КАРТОЧКА ВРАГА */
+.enemy-card {
+    background-color: #1a1a1a;
+    border: 2px solid #333;
+    padding: 25px;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.enemy-card:hover {
+    border-color: #ff4444;
+    transform: translateY(-5px);
+    box-shadow: 0 20px 30px rgba(255, 68, 68, 0.2);
+}
+
+.enemy-image {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 20px;
+    border: 2px solid #ff4444;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #000000;
+}
+
+.enemy-card h3 {
+    color: #ff4444;
+    font-size: 2em;
+    margin-bottom: 15px;
+    border-bottom: 2px dotted #ff4444;
+    padding-bottom: 10px;
+}
+
+.enemy-location {
+    color: #ffaa44;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.enemy-stats {
+    margin: 15px 0;
+    color: #aaa;
+    font-size: 1.1em;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.enemy-stats span {
+    color: #ffaa44;
+    font-weight: bold;
+}
+
+.enemy-description {
+    color: #ccc;
+    font-style: italic;
+    margin: 15px 0;
+    font-size: 1.1em;
+    line-height: 1.5;
+}
+
+.enemy-action {
+    margin-top: 15px;
+    color: #aaa;
+    border-top: 1px solid #333;
+    padding-top: 15px;
+    font-size: 1.1em;
+    text-align: center;
+    color: #ff4444;
+}
+
+/* ===== МОДАЛЬНЫЕ ОКНА ДЛЯ КАРТОЧЕК ВРАГОВ ===== */
+
+/* Затемнение фона */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Активное затемнение */
+.modal-overlay.active {
+    display: flex;
+}
+
+/* Само модальное окно */
+.modal-content {
+    background-color: #1a1a1a;
+    border: 3px solid #ff4444;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    animation: modalAppear 0.3s ease;
+    box-shadow: 0 0 50px rgba(255, 68, 68, 0.3);
+}
+
+/* Анимация появления */
+@keyframes modalAppear {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Кнопка закрытия */
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 2em;
+    color: #ff4444;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 1001;
+}
+
+.modal-close:hover {
+    color: #ff8888;
+    transform: scale(1.1);
+}
+
+/* Контент внутри модального окна */
+.modal-body {
+    padding: 40px 30px;
+}
+
+/* Заголовок в модальном окне */
+.modal-body h2 {
+    color: #ff4444;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    border-bottom: 2px dotted #ff4444;
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+/* Изображение в модальном окне */
+.modal-image {
+    width: 100%;
+    height: 250px;
+    margin: 20px 0;
+    border: 3px solid #ff4444;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #2a2a2a;
+}
+
+/* Характеристики в модальном окне */
+.modal-stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 25px 0;
+    font-size: 1.3em;
+}
+
+.modal-stats span {
+    color: #ffaa44;
+    font-weight: bold;
+}
+
+/* Локация в модальном окне */
+.modal-location {
+    text-align: center;
+    color: #ffaa44;
+    font-size: 1.3em;
+    margin: 15px 0;
+}
+
+/* Описание в модальном окне */
+.modal-description {
+    color: #f0f0f0;
+    font-size: 1.2em;
+    line-height: 1.8;
+    margin: 25px 0;
+    text-align: justify;
+}
+
+/* Действие в модальном окне */
+.modal-action {
+    text-align: center;
+    color: #ff4444;
+    font-size: 1.4em;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px dashed #ff4444;
+}
+
+/* Дополнительная информация */
+.modal-extra {
+    background-color: #2a2a2a;
+    padding: 20px;
+    margin: 20px 0;
+    border-left: 5px solid #ff4444;
+}
+
+.modal-extra h3 {
+    color: #ffaa44;
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+.modal-extra p {
+    color: #ccc;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+/* Скрываем скролл на body когда модальное окно открыто */
+body.modal-open {
+    overflow: hidden;
+}
+
+/* ПАГИНАЦИЯ */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 40px 0;
+}
+
+.page-btn {
+    background: none;
+    border: 2px solid #ff4444;
+    color: #ff4444;
+    font-size: 1.2em;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    min-width: 45px;
+}
+
+.page-btn:hover {
+    background-color: #ff4444;
+    color: #0a0a0a;
+}
+
+.page-btn.active-page {
+    background-color: #ff4444;
+    color: #0a0a0a;
+}
+
+/* Дополнительные стили для расширенной информации */
+.modal-area {
+    text-align: center;
+    color: #ffaa88;
+    font-size: 1.1em;
+    margin: 5px 0 15px 0;
+    font-style: italic;
+}
+
+.modal-difficulty {
+    text-align: center;
+    color: #ff8888;
+    font-size: 1.2em;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.modal-music {
+    text-align: center;
+    color: #aa88ff;
+    font-size: 1.2em;
+    margin: 10px 0 20px 0;
+}
+
+.modal-section {
+    background-color: #1a1a1a;
+    padding: 15px 20px;
+    margin: 20px 0;
+    border-left: 5px solid #ffaa44;
+}
+
+.modal-section h3 {
+    color: #ffaa44;
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+.modal-section ul {
+    margin: 10px 0 0 20px;
+    color: #ddd;
+}
+
+.modal-section li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.modal-extra ul {
+    margin: 10px 0 0 20px;
+    color: #ccc;
+}
+
+.modal-extra li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}

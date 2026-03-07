@@ -1,0 +1,348 @@
+/* ===== БАЗОВЫЕ СТИЛИ ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    background-color: #0a0a0a;
+    color: #f0f0f0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* ===== КОНТЕЙНЕР С ШИРИНОЙ 1700px ===== */
+.wide-container {
+    max-width: 1700px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    background-color: #0a0a0a;
+    border-left: 2px solid #ff4444;
+    border-right: 2px solid #ff4444;
+    box-shadow: 0 0 50px rgba(255, 68, 68, 0.2);
+    min-height: 100vh;
+}
+
+/* ===== ФОНОВЫЕ ЗВЕЗДОЧКИ ===== */
+.wide-container::before {
+    content: "***";
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    font-size: 200px;
+    color: rgba(255, 255, 255, 0.02);
+    font-weight: bold;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ===== ШАПКА ===== */
+.header {
+    text-align: center;
+    padding: 60px 120px;
+    border-bottom: 1px dashed #ff4444;
+    margin-bottom: 45px;
+}
+
+.header h1 {
+    font-size: 4.5em;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    color: #ffffff;
+    text-shadow: 4px 4px 0 #ff4444;
+}
+
+.header p {
+    color: #aaaaaa;
+    font-size: 1.8em;
+    margin-top: 15px;
+}
+
+/* ===== НАВИГАЦИЯ ===== */
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    padding: 0 120px 45px 120px;
+    flex-wrap: wrap;
+}
+
+.nav-btn {
+    background: none;
+    border: 3px solid #ff4444;
+    color: #f0f0f0;
+    font-size: 1.5em;
+    padding: 12px 25px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.8);
+    min-width: 150px;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.nav-btn.heart-btn {
+    color: #ff4444;
+    font-size: 1.6em;
+    border-color: #ff8888;
+}
+
+.nav-btn:hover {
+    background-color: #ff4444;
+    color: #0a0a0a;
+    border-color: white;
+    transform: scale(1.05);
+    box-shadow: 0 0 30px #ff4444;
+}
+
+.nav-btn.active {
+    background-color: #ff4444;
+    color: #0a0a0a;
+    border-color: white;
+}
+
+/* ===== КОНТЕНТ ГЛАВНОЙ СТРАНИЦЫ ===== */
+.main-page-content {
+    text-align: center;
+    padding: 20px 120px 60px 120px;
+}
+
+/* ===== БЛОК "ОБ ИГРЕ" ===== */
+.about-block {
+    padding: 20px 120px 60px 120px;
+}
+
+.about-title {
+    font-size: 3.5em;
+    color: #864991;
+    margin-bottom: 25px;
+    text-align: center;
+    border-left: none;
+    padding-left: 0;
+}
+
+.about-subtitle {
+    color: #aaa;
+    font-size: 1.8em;
+    margin-bottom: 45px;
+    text-align: center;
+    margin-left: 0;
+}
+
+.about-content {
+    background-color: #1a1a1a;
+    border: 2px solid #ff4444;
+    padding: 70px;
+    margin-bottom: 20px;
+    max-width: 1450px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-content p {
+    color: #f0f0f0;
+    font-size: 1.5em;
+    line-height: 1.9;
+    margin-bottom: 35px;
+}
+
+/* ===== БЛОК С ВРАГАМИ И ПРЕДМЕТАМИ ===== */
+.enemies-block {
+    padding: 60px 120px;
+    background-color: #111111;
+    border-top: 3px solid #ff4444;
+    border-bottom: 3px solid #ff4444;
+    position: relative;
+    z-index: 2;
+}
+
+.section-title {
+    font-size: 3.5em;
+    color: #ff4444;
+    margin-bottom: 25px;
+    text-align: center;
+    border-left: none;
+    padding-left: 0;
+}
+
+.section-subtitle {
+    color: #aaa;
+    font-size: 1.8em;
+    margin-bottom: 45px;
+    text-align: center;
+    margin-left: 0;
+}
+
+/* ===== СЕТКА ДЛЯ ТРЕХ КАРТОЧЕК ===== */
+.enemies-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 60px;
+    max-width: 1450px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ===== КАРТОЧКА ===== */
+.enemy-card {
+    background-color: #1a1a1a;
+    border: 2px solid #333;
+    padding: 35px;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.enemy-card:hover {
+    border-color: #ff4444;
+    transform: translateY(-5px);
+    box-shadow: 0 20px 30px rgba(255, 68, 68, 0.2);
+}
+
+.enemy-image {
+    width: 100%;
+    height: 280px;
+    margin-bottom: 25px;
+    border: 2px solid #ff4444;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.enemy-card h3 {
+    color: #ff4444;
+    font-size: 2.1em;
+    margin-bottom: 18px;
+    border-bottom: 2px dotted #ff4444;
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+.enemy-stats {
+    margin: 18px 0;
+    color: #aaa;
+    font-size: 1.3em;
+    text-align: center;
+}
+
+.enemy-stats span {
+    color: #ffaa44;
+    font-weight: bold;
+    font-size: 1.4em;
+}
+
+.enemy-description {
+    color: #ccc;
+    font-style: italic;
+    margin: 18px 0;
+    font-size: 1.2em;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+.enemy-action {
+    margin-top: 18px;
+    color: #aaa;
+    border-top: 1px solid #333;
+    padding-top: 18px;
+    font-size: 1.2em;
+    text-align: center;
+    color: #ff4444;
+}
+
+/* ===== КНОПКА "КО ВСЕМ..." ===== */
+.button-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.view-all-btn {
+    display: inline-block;
+    background: none;
+    border: 2px solid #ff4444;
+    color: #ff4444;
+    font-size: 1.8em;
+    padding: 18px 60px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.view-all-btn:hover {
+    background-color: #ff4444;
+    color: #0a0a0a;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #ff4444;
+}
+
+/* ===== РАЗДЕЛ-ПРИЗЫВ ===== */
+.call-section {
+    text-align: center;
+    padding: 90px 20px;
+    background-color: #0a0a0a;
+    width: 100%;
+}
+
+.call-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.call-content h2 {
+    color: #ff4444;
+    font-size: 4.5em;
+    margin-bottom: 35px;
+    text-shadow: 3px 3px 0 #440000;
+    font-weight: bold;
+    line-height: 1.3;
+}
+
+.call-content p {
+    color: #f0f0f0;
+    font-size: 2.5em;
+    margin-bottom: 50px;
+    font-weight: normal;
+    line-height: 1.4;
+}
+
+/* ===== ФУТЕР ===== */
+.footer {
+    background-color: #0a0a0a;
+    padding: 45px 120px;
+    text-align: center;
+    color: #666;
+    font-size: 1.3em;
+    border-top: 2px solid #ff4444;
+}
+
+/* ===== АДАПТАЦИЯ ===== */
+@media (max-width: 768px) {
+    .header, .nav-menu, .main-page-content, .about-block, .enemies-block, .footer {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    
+    .enemies-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .call-content h2 {
+        font-size: 2.5em;
+    }
+    
+    .call-content p {
+        font-size: 1.5em;
+    }
+}
