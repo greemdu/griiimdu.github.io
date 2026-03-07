@@ -1,0 +1,427 @@
+/* ===== СТИЛИ ДЛЯ СТРАНИЦЫ ПРЕДМЕТОВ ===== */
+
+        /* БАЗОВЫЕ СТИЛИ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        body {
+            background-color: #0a0a0a;
+            color: #f0f0f0;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        /* КОНТЕЙНЕР С УЗКОЙ ШИРИНОЙ */
+        .wide-container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            position: relative;
+            background-color: #0a0a0a;
+            border-left: 2px solid #ff4444;
+            border-right: 2px solid #ff4444;
+            box-shadow: 0 0 50px rgba(255, 68, 68, 0.2);
+            min-height: 100vh;
+        }
+
+        /* Фоновые звездочки */
+        .wide-container::before {
+            content: "***";
+            position: absolute;
+            top: 20px;
+            left: 40px;
+            font-size: 200px;
+            color: rgba(255, 255, 255, 0.02);
+            font-weight: bold;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* ШАПКА */
+        .header {
+            text-align: center;
+            padding: 40px 60px;
+            border-bottom: 1px dashed #ff4444;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 3.5em;
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            color: #ffffff;
+            text-shadow: 4px 4px 0 #ff4444;
+        }
+
+        .header p {
+            color: #aaaaaa;
+            font-size: 1.3em;
+            margin-top: 15px;
+        }
+
+        /* НАВИГАЦИЯ */
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 0 60px 30px 60px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: none;
+            border: 3px solid #ff4444;
+            color: #f0f0f0;
+            font-size: 1.3em;
+            padding: 10px 25px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+            font-weight: bold;
+            background-color: rgba(0, 0, 0, 0.8);
+            min-width: 130px;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        .nav-btn:hover {
+            background-color: #ff4444;
+            color: #0a0a0a;
+            transform: scale(1.05);
+            box-shadow: 0 0 30px #ff4444;
+        }
+
+        .nav-btn.active {
+            background-color: #ff4444;
+            color: #0a0a0a;
+            border-color: white;
+        }
+
+        /* ОСНОВНОЙ КОНТЕНТ */
+        .content {
+            padding: 20px 60px 40px 60px;
+        }
+
+        /* ЗАГОЛОВОК РАЗДЕЛА */
+        .page-title {
+            font-size: 2.5em;
+            color: #ff4444;
+            margin-bottom: 10px;
+            text-align: center;
+            border-left: none;
+            padding-left: 0;
+        }
+
+        .page-description {
+            color: #aaa;
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            text-align: center;
+            margin-left: 0;
+        }
+
+        /* ФИЛЬТРЫ */
+        .filters {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+            border-top: 2px solid #ff4444;
+            border-bottom: 2px solid #ff4444;
+            padding: 20px 0;
+        }
+
+        .filter-btn {
+            background: none;
+            border: 2px solid #333;
+            color: #aaa;
+            font-size: 1.1em;
+            padding: 8px 20px;
+            cursor: pointer;
+            transition: 0.3s;
+            text-transform: uppercase;
+            display: inline-block;
+        }
+
+        .filter-btn:hover {
+            border-color: #ff4444;
+            color: #ff4444;
+        }
+
+        /* СЕТКА КАРТОЧЕК - ТРИ В РЯДУ */
+        .items-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        /* КАРТОЧКА ПРЕДМЕТА */
+        .item-card {
+            background-color: #1a1a1a;
+            border: 2px solid #333;
+            padding: 20px;
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .item-card:hover {
+            border-color: #ff4444;
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px rgba(255, 68, 68, 0.2);
+        }
+
+        .item-image {
+            width: 100%;
+            height: 150px;
+            margin-bottom: 15px;
+            border: 2px solid #ff4444;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #000000;
+        }
+
+        .item-card h3 {
+            color: #ff4444;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            border-bottom: 2px dotted #ff4444;
+            padding-bottom: 8px;
+            text-align: center;
+        }
+
+        .item-type {
+            color: #ffaa44;
+            font-size: 1em;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .item-stats {
+            margin: 10px 0;
+            color: #aaa;
+            font-size: 1em;
+            text-align: center;
+        }
+
+        .item-stats span {
+            color: #ffaa44;
+            font-weight: bold;
+        }
+
+        .item-description {
+            color: #ccc;
+            font-style: italic;
+            margin: 10px 0;
+            font-size: 0.95em;
+            line-height: 1.4;
+            flex-grow: 1;
+        }
+
+        .item-effect {
+            margin-top: 10px;
+            color: #aaa;
+            border-top: 1px solid #333;
+            padding-top: 10px;
+            font-size: 0.95em;
+            text-align: center;
+            color: #ff4444;
+        }
+
+        .item-effect span {
+            color: #44ff44;
+        }
+
+
+
+        /* ФУТЕР */
+        .footer {
+            background-color: #0a0a0a;
+            padding: 30px 60px;
+            text-align: center;
+            color: #666;
+            font-size: 1em;
+            border-top: 2px solid #ff4444;
+        }
+
+        /* Адаптация */
+        @media (max-width: 768px) {
+            .items-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+/* ===== СКРЫВАЕМ РАДИО-КНОПКИ ===== */
+.filter-radio {
+    display: none !important;
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+}
+
+
+/* СКРЫТЫЕ РАДИО-КНОПКИ ДЛЯ ФИЛЬТРОВ */
+.filter-radio {
+    display: none;
+}
+
+/* ПОКАЗЫВАЕМ ВСЕ ПРЕДМЕТЫ ПО УМОЛЧАНИЮ */
+#filter-all:checked ~ .wide-container .content .item-card {
+    display: flex;
+}
+
+/* ФИЛЬТР ДЛЯ ЕДЫ */
+#filter-food:checked ~ .wide-container .content .item-card:not([data-type*="ЕДА"]) {
+    display: none;
+}
+
+/* ФИЛЬТР ДЛЯ ОРУЖИЯ */
+#filter-weapon:checked ~ .wide-container .content .item-card:not([data-type*="ОРУЖИЕ"]) {
+    display: none;
+}
+
+/* ФИЛЬТР ДЛЯ БРОНИ */
+#filter-armor:checked ~ .wide-container .content .item-card:not([data-type*="БРОНЯ"]) {
+    display: none;
+}
+
+/* ФИЛЬТР ДЛЯ КЛЮЧЕВЫХ */
+#filter-key:checked ~ .wide-container .content .item-card:not([data-type*="КЛЮЧЕВЫЕ"]) {
+    display: none;
+}
+
+/* АКТИВНАЯ КНОПКА ФИЛЬТРА */
+#filter-all:checked ~ .wide-container .content label[for="filter-all"],
+#filter-food:checked ~ .wide-container .content label[for="filter-food"],
+#filter-weapon:checked ~ .wide-container .content label[for="filter-weapon"],
+#filter-armor:checked ~ .wide-container .content label[for="filter-armor"],
+#filter-key:checked ~ .wide-container .content label[for="filter-key"] {
+    background-color: #ff4444;
+    border-color: #ff4444;
+    color: #0a0a0a;
+}
+
+/* СЕТКА КАРТОЧЕК */
+.items-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+/* КАРТОЧКА ПРЕДМЕТА */
+.item-card {
+    background-color: #1a1a1a;
+    border: 2px solid #333;
+    padding: 25px;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.item-card:hover {
+    border-color: #ff4444;
+    transform: translateY(-5px);
+    box-shadow: 0 20px 30px rgba(255, 68, 68, 0.2);
+}
+
+.item-image {
+    width: 100%;
+    height: 150px;
+    margin-bottom: 15px;
+    border: 2px solid #ff4444;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #2a2a2a;
+}
+
+.item-card h3 {
+    color: #ff4444;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    border-bottom: 2px dotted #ff4444;
+    padding-bottom: 8px;
+    text-align: center;
+}
+
+.item-type {
+    color: #ffaa44;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.item-stats {
+    margin: 10px 0;
+    color: #aaa;
+    font-size: 1.1em;
+    text-align: center;
+}
+
+.item-stats span {
+    color: #ffaa44;
+    font-weight: bold;
+}
+
+.item-description {
+    color: #ccc;
+    font-style: italic;
+    margin: 10px 0;
+    font-size: 1em;
+    line-height: 1.5;
+    flex-grow: 1;
+}
+
+.item-effect {
+    margin-top: 10px;
+    color: #aaa;
+    border-top: 1px solid #333;
+    padding-top: 10px;
+    font-size: 1em;
+    text-align: center;
+    color: #ff4444;
+}
+
+/* ПАГИНАЦИЯ */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 40px 0;
+}
+
+.page-btn {
+    background: none;
+    border: 2px solid #ff4444;
+    color: #ff4444;
+    font-size: 1.2em;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    min-width: 45px;
+}
+
+.page-btn:hover {
+    background-color: #ff4444;
+    color: #0a0a0a;
+}
+
+.page-btn.active-page {
+    background-color: #ff4444;
+    color: #0a0a0a;
+}

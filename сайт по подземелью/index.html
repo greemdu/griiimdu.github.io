@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UnderTale: Гайды | Главная</title>
+    
+    <!-- СКРИПТ СВЕТЛОЙ ТЕМЫ -->
+    <script>
+        (function() {
+            try {
+                const savedTheme = localStorage.getItem('site-theme');
+                if (savedTheme === 'light') {
+                    document.documentElement.classList.add('light-theme');
+                    document.body?.classList.add('light-theme');
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <link rel="stylesheet" href="css-слайдер.css">
+    <link rel="stylesheet" href="индекс-css.css">
+    <link rel="stylesheet" href="светлая-тема.css">
+
+</head>
+<body>
+
+
+
+    <div class="wide-container">
+        <!-- ШАПКА -->
+        <div class="header">
+            <h1>UNDERTALE</h1>
+            <p>Путеводитель по Подземелью • Статьи и информация</p>
+        </div>
+
+        <!-- НАВИГАЦИЯ -->
+        <div class="nav-menu">
+            <a href="index.html" class="nav-btn heart-btn">❤️ ГЛАВНАЯ</a>
+            <a href="enemies.html" class="nav-btn">⚔️ ВРАГИ</a>
+            <a href="items.html" class="nav-btn">🎒 ПРЕДМЕТЫ</a>
+            <a href="articles.html" class="nav-btn">📚 СТАТЬИ</a>
+        </div>
+
+        <!-- КОНТЕНТ ГЛАВНОЙ - СЛАЙДЕР -->
+        <div class="main-page-content">
+            <!-- СЛАЙДЕР -->
+            <div class="slider-container">
+                <div class="slider">
+                    <div class="slider-wrapper" id="sliderWrapper">
+                        <div class="slide"></div>
+                        <div class="slide"></div>
+                        <div class="slide"></div>
+                    </div>
+                    
+                    <button class="slider-btn prev" id="prevBtn">←</button>
+                    <button class="slider-btn next" id="nextBtn">→</button>
+                </div>
+                
+                <div class="slider-dots" id="sliderDots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- БЛОК "ОБ ИГРЕ" -->
+        <div class="about-block">
+            <h2 class="about-title">📖 ОБ ИГРЕ</h2>
+            <p class="about-subtitle">Что такое Undertale?</p>
+            
+            <div class="about-content">
+                <p>
+                    Undertale — ролевая игра, выполненная в пиксельной графике, использующая традиционные механики 
+                    ролевых компьютерных игр, такие как получение очков опыта, оружие и очки здоровья, но с 
+                    некоторыми отличиями. Сеттинг позволяет игроку путешествовать по подземелью, в том числе 
+                    посещать различные локации.
+                </p>
+                
+                <p>
+                    По ходу действия игроку придётся столкнуться с разного рода головоломками, а также 
+                    взаимодействовать с неигровыми персонажами. Также во внешнем мире игроку встречаются 
+                    точки сохранения, которые позволяют сохранить его текущий прогресс, попутно восстановив 
+                    очки здоровья.
+                </p>
+                
+                <p>
+                    В сражениях, выполненных в стиле Bullet Hell, игрок должен избегать атак противника. 
+                    Он может использовать ненасильственные методы разрешения конфликта (говорить, использовать 
+                    предметы, убегать, щадить), либо ударить в ответ.
+                </p>
+                
+                <p>
+                    В игре присутствуют разветвления сюжета и различные концовки (три из которых являются 
+                    главными), зависящие от того, убивает ли игрок монстров или щадит их.
+                </p>
+                
+                <div style="margin-top: 30px; padding-top: 20px; border-top: 1px dashed #ff4444; text-align: right; color: #888;">
+                    <p style="font-size: 1.5em;">📚 Источник: Википедия</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- РАЗДЕЛ-ПРИЗЫВ -->
+        <div class="call-section">
+            <div class="call-content">
+                <h2>⭐ Ого! Звучит интересно!</h2>
+                <p>Хочу узнать об игре больше!</p>
+                <a href="articles.html" class="view-all-btn">📚 КО ВСЕМ СТАТЬЯМ →</a>
+            </div>
+        </div>
+
+        <!-- БЛОК С ВРАГАМИ -->
+        <div class="enemies-block">
+            <h2 class="section-title">⚔️ ВРАГИ</h2>
+            <p class="section-subtitle">Противники, которые встретятся на твоем пути.</p>
+            
+            <div class="enemies-grid">
+                <!-- Карточка Фроггита -->
+                <div class="enemy-card">
+                    <div class="enemy-image" style="background-image: url('images/фроггит спрайт.png');"></div>
+                    <h3>Фроггит</h3>
+                    <div class="enemy-stats">
+                        <span>❤️ 30 HP</span> • <span>⚔️ 5 ATK</span> • <span>🛡️ 4 DEF</span>
+                    </div>
+                    <p class="enemy-description">
+                        Маленький лягушкоподобный монстр. Обитает в Руинах. 
+                        Если с ним подружиться, он может пропустить ход.
+                    </p>
+                    <div class="enemy-action">⚡ Действие: Поговорить</div>
+                </div>
+
+                <div class="enemy-card">
+                    <div class="enemy-image" style="background-image: url('images/блук спрайт.png');"></div>
+                    <h3>Напстаблук</h3>
+                    <div class="enemy-stats">
+                        <span>❤️ 5 HP</span> • <span>⚔️ 5 ATK</span> • <span>🛡️ 5 DEF</span>
+                    </div>
+                    <p class="enemy-description">
+                        Призрак, который совсем не хочет драться. 
+                        Если его пощадить, он просто уйдет.
+                    </p>
+                    <div class="enemy-action">⚡ Действие: Приободрить</div>
+                </div>
+
+                <div class="enemy-card">
+                    <div class="enemy-image" style="background-image: url('images/вегетоид спрайт.png');"></div>
+                    <h3>Вегетоид</h3>
+                    <div class="enemy-stats">
+                        <span>❤️ 72 HP</span> • <span>⚔️ 6 ATK</span> • <span>🛡️ 6 DEF</span>
+                    </div>
+                    <p class="enemy-description">
+                        Буквально живая морковка, которая ОЧЕНЬ хочет тебя накормить.
+                    </p>
+                    <div class="enemy-action">⚡ Действие: Поужинать</div>
+                </div>
+            </div>
+
+            <div class="button-container">
+                <a href="enemies.html" class="view-all-btn">⚔️ КО ВСЕМ ВРАГАМ →</a>
+            </div>
+        </div>
+
+        <!-- БЛОК С ПРЕДМЕТАМИ -->
+        <div class="enemies-block" style="border-top: none;">
+            <h2 class="section-title">🎒 ПРЕДМЕТЫ</h2>
+            <p class="section-subtitle">Расходные предметы, которые помогают (а может и нет) Фриск в путешествии.</p>
+            
+            <div class="enemies-grid">
+                <div class="enemy-card">
+                    <div class="enemy-image" style="background-image: url('images/конфета спрайт.png'); background-size: contain; background-color: #000000;"></div>
+                    <h3>Монстрконфета</h3>
+                    <div class="enemy-stats">
+                        <span>❤️ Восстанавливает:</span> 10 HP
+                    </div>
+                    <p class="enemy-description">Обладает отчетливым вкусом, не похожим на лакричный.</p>
+                    <div class="enemy-action">🍬 Можно съесть или сохранить</div>
+                </div>
+
+                <div class="enemy-card">
+                    <div class="enemy-image" style="background-image: url('images/пирог спрайт.png'); background-size: contain; background-color: #000000;"></div>
+                    <h3>Ирисково-коричный пирог</h3>
+                    <div class="enemy-stats">
+                        <span>❤️ Восстанавливает:</span> 99+ HP (всё)
+                    </div>
+                    <p class="enemy-description">Домашний пирог от Ториэль. Согревает душу и наполняет решимостью до краёв.</p>
+                    <div class="enemy-action">🥧 Лучше съесть в трудную минуту</div>
+                </div>
+
+                <div class="enemy-card">
+                    <div class="enemy-image" style="background-image: url('images/пончик спрайт.png'); background-size: contain; background-color: #000000;"></div>
+                    <h3>Паучий пончик</h3>
+                    <div class="enemy-stats">
+                        <span>❤️ Восстанавливает:</span> 12 HP
+                    </div>
+                    <p class="enemy-description">Пончик с паучьим сиропом в тесте. От пауков для пауков.</p>
+                    <div class="enemy-action">🕷️ Продаётся в паучьей лавке</div>
+                </div>
+            </div>
+
+            <div class="button-container">
+                <a href="items.html" class="view-all-btn">🎒 КО ВСЕМ ПРЕДМЕТАМ →</a>
+            </div>
+        </div>
+
+        <!-- ФУТЕР -->
+        <footer class="footer">
+            <p>*** UNDERTALE FAN GUIDE ***</p>
+            <div style="margin-top: 20px;">
+                <button onclick="setTheme('dark')" style="background: none; border: 2px solid #ff4444; color: #ff4444; padding: 8px 20px; margin: 0 5px; cursor: pointer; font-family: 'Courier New', monospace;">🌙 Тёмная</button>
+                <button onclick="setTheme('light')" style="background: none; border: 2px solid #ff4444; color: #ff4444; padding: 8px 20px; margin: 0 5px; cursor: pointer; font-family: 'Courier New', monospace;">☀️ Светлая</button>
+            </div>
+        </footer>
+
+    <!-- ПЛАШКА С ОПИСАНИЕМ -->
+    <div id="info-popup" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.9); display: flex; justify-content: center; align-items: center; z-index: 9999; backdrop-filter: blur(5px);">
+        <div id="popup-main" style="background-color: #1a1a1a; border: 3px solid #ff4444; padding: 40px; max-width: 600px; text-align: center; box-shadow: 0 0 50px rgba(255, 68, 68, 0.5);">
+            <h2 style="color: #ff4444; font-size: 2.5em; margin-bottom: 20px; text-transform: uppercase;">📖 UNDERTALE</h2>
+            <p style="color: #f0f0f0; font-size: 1.3em; line-height: 1.6; margin-bottom: 30px;">
+                Добро пожаловать в Подземелье!<br><br>
+                UNDERTALE — это ролевая игра, где ты можешь 
+                подружиться с каждым врагом. Здесь ты найдешь 
+                гайды по прохождению, информацию о монстрах, 
+                предметах и секретах.<br><br>
+            </p>
+            <div style="display: flex; gap: 20px; justify-content: center;">
+                <button id="dont-understand" style="background: none; border: 3px solid #666; color: #aaa; font-size: 1.5em; padding: 15px 30px; cursor: pointer; text-transform: uppercase; font-weight: bold; transition: 0.3s; min-width: 150px;">🤔 не понял</button>
+                <button id="got-it" style="background: none; border: 3px solid #ff4444; color: #ff4444; font-size: 1.5em; padding: 15px 30px; cursor: pointer; text-transform: uppercase; font-weight: bold; transition: 0.3s; min-width: 150px;">❤️ понял</button>
+            </div>
+        </div>
+
+        <div id="popup-secondary" style="background-color: #1a1a1a; border: 3px solid #ff4444; padding: 40px; max-width: 600px; text-align: center; box-shadow: 0 0 50px rgba(255, 68, 68, 0.5); display: none;">
+            <h2 style="color: #ff4444; font-size: 2.5em; margin-bottom: 20px; text-transform: uppercase;">💔 КАК ГРУСТНО...</h2>
+            <p style="color: #f0f0f0; font-size: 1.3em; line-height: 1.6; margin-bottom: 30px;">
+                Может, ты хотел бы узнать о чём эта игра?
+            </p>
+            <div style="display: flex; gap: 20px; justify-content: center;">
+                <button id="no-thanks" style="background: none; border: 3px solid #666; color: #aaa; font-size: 1.5em; padding: 15px 30px; cursor: pointer; text-transform: uppercase; font-weight: bold; transition: 0.3s; min-width: 180px;">🖤 мне это не нужно</button>
+                <button id="yes-want" style="background: none; border: 3px solid #ff4444; color: #ff4444; font-size: 1.5em; padding: 15px 30px; cursor: pointer; text-transform: uppercase; font-weight: bold; transition: 0.3s; min-width: 180px;">❤️ да, я хочу знать!</button>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        #dont-understand:hover, #no-thanks:hover {
+            background-color: #666;
+            color: #fff;
+            transform: scale(1.05);
+        }
+        #got-it:hover, #yes-want:hover {
+            background-color: #ff4444;
+            color: #000;
+            transform: scale(1.05);
+            box-shadow: 0 0 20px #ff4444;
+        }
+    </style>
+
+    <script>
+        window.addEventListener('load', function() {
+            if (localStorage.getItem('popupShown') === 'true') {
+                document.getElementById('info-popup').style.display = 'none';
+                return;
+            }
+
+            const popupMain = document.getElementById('popup-main');
+            const popupSecondary = document.getElementById('popup-secondary');
+            const popup = document.getElementById('info-popup');
+            
+            if (!popupMain || !popupSecondary || !popup) return;
+
+            function closePopup() {
+                popup.style.display = 'none';
+                localStorage.setItem('popupShown', 'true');
+            }
+
+            document.getElementById('got-it')?.addEventListener('click', closePopup);
+            
+            document.getElementById('dont-understand')?.addEventListener('click', function() {
+                popupMain.style.display = 'none';
+                popupSecondary.style.display = 'block';
+            });
+
+            document.getElementById('no-thanks')?.addEventListener('click', closePopup);
+
+            document.getElementById('yes-want')?.addEventListener('click', function() {
+                closePopup();
+                document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+
+    <script>
+        // СЛАЙДЕР
+        const sliderWrapper = document.getElementById('sliderWrapper');
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        
+        let currentIndex = 0;
+        let autoInterval;
+        const slideCount = slides.length;
+
+        function updateSlider() {
+            sliderWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+            
+            dots.forEach((dot, index) => {
+                if (index === currentIndex) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % slideCount;
+            updateSlider();
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+            updateSlider();
+        }
+
+        function goToSlide(index) {
+            currentIndex = index;
+            updateSlider();
+        }
+
+        function startAuto() {
+            if (autoInterval) clearInterval(autoInterval);
+            autoInterval = setInterval(nextSlide, 5000);
+        }
+
+        function resetAuto() {
+            clearInterval(autoInterval);
+            startAuto();
+        }
+
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            resetAuto();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            resetAuto();
+        });
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                goToSlide(index);
+                resetAuto();
+            });
+        });
+
+        startAuto();
+        updateSlider();
+    </script>
+
+    <script>
+        // Переключение тем
+        function setTheme(theme) {
+            if (theme === 'light') {
+                document.body.classList.add('light-theme');
+                localStorage.setItem('site-theme', 'light');
+            } else {
+                document.body.classList.remove('light-theme');
+                localStorage.setItem('site-theme', 'dark');
+            }
+        }
+        
+        // При загрузке проверяем сохраненную тему
+        window.addEventListener('load', function() {
+            const savedTheme = localStorage.getItem('site-theme');
+            if (savedTheme === 'light') {
+                document.body.classList.add('light-theme');
+            }
+        });
+    </script>
+
+</body>
+</html>
