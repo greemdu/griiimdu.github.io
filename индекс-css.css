@@ -65,7 +65,7 @@ body {
 .nav-menu {
     display: flex;
     justify-content: center;
-    gap: 35px;
+    gap: 20px; /* УМЕНЬШЕНО: с 35px до 20px */
     padding: 0 120px 45px 120px;
     flex-wrap: wrap;
 }
@@ -74,24 +74,24 @@ body {
     background: none;
     border: 3px solid #ff4444;
     color: #f0f0f0;
-    font-size: 1.5em;
-    padding: 12px 25px;
+    font-size: 1.3em; /* УМЕНЬШЕНО: с 1.5em до 1.3em */
+    padding: 8px 20px; /* УМЕНЬШЕНО: с 12px 25px до 8px 20px */
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px; /* УМЕНЬШЕНО: с 10px до 8px */
     transition: all 0.2s ease;
     text-transform: uppercase;
     font-weight: bold;
     background-color: rgba(0, 0, 0, 0.8);
-    min-width: 150px;
+    min-width: 120px; /* УМЕНЬШЕНО: с 150px до 120px */
     justify-content: center;
     text-decoration: none;
 }
 
 .nav-btn.heart-btn {
     color: #ff4444;
-    font-size: 1.6em;
+    font-size: 1.4em; /* УМЕНЬШЕНО: с 1.6em до 1.4em */
     border-color: #ff8888;
 }
 
@@ -345,4 +345,5 @@ body {
     .call-content p {
         font-size: 1.5em;
     }
+
 }
