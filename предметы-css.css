@@ -166,7 +166,7 @@
 
         /* КАРТОЧКА ПРЕДМЕТА */
         .item-card {
-            background-color: #000000;
+            background-color: #1a1a1a;
             border: 2px solid #333;
             padding: 20px;
             transition: 0.3s;
@@ -424,4 +424,5 @@
 .page-btn.active-page {
     background-color: #ff4444;
     color: #0a0a0a;
+
 }
