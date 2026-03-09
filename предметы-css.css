@@ -324,7 +324,7 @@
 
 /* КАРТОЧКА ПРЕДМЕТА */
 .item-card {
-    background-color: #000000;
+    background-color: #1a1a1a;
     border: 2px solid #333;
     padding: 25px;
     transition: 0.3s;
@@ -426,3 +426,4 @@
     color: #0a0a0a;
 
 }
+
