@@ -233,4 +233,66 @@
         width: 10px !important;
         height: 10px !important;
     }
+
+}
+
+/* ===== АДАПТАЦИЯ ДЛЯ СТРАНИЦ СО СТАТЬЯМИ ===== */
+
+@media (max-width: 768px) {
+    .article-content {
+        padding: 20px 20px 30px 20px !important;
+    }
+
+    .article-title {
+        font-size: 1.8em !important;
+    }
+
+    .article-subtitle {
+        font-size: 1.5em !important;
+        padding-left: 15px !important;
+    }
+
+    .article-text {
+        font-size: 1.1em !important;
+    }
+
+    .gif-container {
+        padding: 15px !important;
+    }
+
+    .gif-container img {
+        height: auto !important;
+        max-height: 200px !important;
+    }
+
+    .gif-caption {
+        font-size: 0.9em !important;
+    }
+
+    .back-link {
+        font-size: 1em !important;
+        padding: 8px 20px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .article-title {
+        font-size: 1.5em !important;
+    }
+
+    .article-subtitle {
+        font-size: 1.3em !important;
+    }
+
+    .article-text {
+        font-size: 1em !important;
+    }
+
+    .gif-container {
+        margin: 20px 0 !important;
+    }
+
+    .gif-container img {
+        max-height: 150px !important;
+    }
 }
