@@ -1,0 +1,236 @@
+/* ===== АДАПТАЦИЯ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ ===== */
+
+/* Планшеты и маленькие ноутбуки */
+@media (max-width: 1024px) {
+    .wide-container {
+        max-width: 95% !important;
+    }
+    
+    .header {
+        padding: 30px 40px !important;
+    }
+    
+    .header h1 {
+        font-size: 3em !important;
+    }
+}
+
+/* Телефоны (горизонтальная ориентация) */
+@media (max-width: 768px) {
+    /* ШАПКА */
+    .header {
+        padding: 20px 20px !important;
+        margin-bottom: 20px;
+    }
+
+    .header h1 {
+        font-size: 2.2em !important;
+        letter-spacing: 4px;
+        text-shadow: 2px 2px 0 #ff4444;
+    }
+
+    .header p {
+        font-size: 1em !important;
+        line-height: 1.4;
+    }
+
+    /* НАВИГАЦИЯ */
+    .nav-menu {
+        gap: 10px !important;
+        padding: 0 15px 20px 15px !important;
+    }
+
+    .nav-btn {
+        font-size: 1em !important;
+        padding: 8px 12px !important;
+        min-width: 100px !important;
+    }
+
+    /* ОСНОВНОЙ КОНТЕНТ */
+    .content,
+    .main-page-content,
+    .about-block {
+        padding: 20px 20px 30px 20px !important;
+    }
+
+    /* ЗАГОЛОВКИ */
+    .page-title,
+    .section-title,
+    .about-title {
+        font-size: 2em !important;
+    }
+
+    .page-description,
+    .section-subtitle,
+    .about-subtitle {
+        font-size: 1.2em !important;
+    }
+
+    /* СЕТКИ КАРТОЧЕК */
+    .enemies-grid,
+    .items-grid,
+    .articles-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+
+    /* КАРТОЧКИ */
+    .enemy-card,
+    .item-card,
+    .article-card {
+        padding: 20px !important;
+    }
+
+    .enemy-image,
+    .item-image,
+    .article-image {
+        height: 200px !important;
+    }
+
+    .enemy-card h3,
+    .item-card h3,
+    .article-card h3 {
+        font-size: 1.5em !important;
+    }
+
+    /* ФУТЕР */
+    .footer {
+        padding: 20px 20px !important;
+        font-size: 0.9em !important;
+    }
+
+    .footer button {
+        padding: 6px 15px !important;
+        font-size: 0.9em !important;
+    }
+
+    /* РАЗДЕЛ-ПРИЗЫВ */
+    .call-section {
+        padding: 40px 20px !important;
+    }
+
+    .call-content h2 {
+        font-size: 2.5em !important;
+        margin-bottom: 20px;
+    }
+
+    .call-content p {
+        font-size: 1.5em !important;
+        margin-bottom: 25px;
+    }
+
+    .view-all-btn {
+        font-size: 1.2em !important;
+        padding: 12px 30px !important;
+    }
+
+    /* КНОПКИ ПЕРЕКЛЮЧЕНИЯ ТЕМ */
+    .footer button {
+        display: block;
+        width: 80%;
+        margin: 5px auto !important;
+    }
+}
+
+/* Маленькие телефоны (вертикальная ориентация) */
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 1.8em !important;
+        letter-spacing: 2px;
+    }
+
+    .header p {
+        font-size: 0.85em !important;
+    }
+
+    .nav-menu {
+        flex-direction: column !important;
+        align-items: center;
+    }
+
+    .nav-btn {
+        width: 90% !important;
+        max-width: 250px;
+        font-size: 0.95em !important;
+    }
+
+    .page-title,
+    .section-title,
+    .about-title {
+        font-size: 1.6em !important;
+    }
+
+    .enemy-card h3,
+    .item-card h3,
+    .article-card h3 {
+        font-size: 1.3em !important;
+    }
+
+    .enemy-stats,
+    .item-stats {
+        font-size: 0.9em !important;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .enemy-description,
+    .item-description,
+    .article-preview {
+        font-size: 0.9em !important;
+    }
+
+    .call-content h2 {
+        font-size: 2em !important;
+    }
+
+    .call-content p {
+        font-size: 1.2em !important;
+    }
+
+    .view-all-btn {
+        font-size: 1em !important;
+        padding: 10px 20px !important;
+    }
+}
+
+
+/* ===== АДАПТАЦИЯ ДЛЯ ГЛАВНОЙ СТРАНИЦЫ ===== */
+
+@media (max-width: 768px) {
+    .slider {
+        padding-bottom: 56.25% !important; /* Соотношение сторон 16:9 */
+    }
+
+    .slider-btn {
+        width: 40px !important;
+        height: 40px !important;
+        font-size: 2em !important;
+    }
+
+    .dot {
+        width: 12px !important;
+        height: 12px !important;
+    }
+
+    .about-content {
+        padding: 30px 20px !important;
+    }
+
+    .about-content p {
+        font-size: 1.1em !important;
+        line-height: 1.6;
+    }
+}
+
+@media (max-width: 480px) {
+    .slider-btn {
+        width: 35px !important;
+        height: 35px !important;
+        font-size: 1.5em !important;
+    }
+
+    .dot {
+        width: 10px !important;
+        height: 10px !important;
+    }
+}
